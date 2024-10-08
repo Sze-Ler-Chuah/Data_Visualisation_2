@@ -9,7 +9,7 @@
   "data": [
     {
       "name": "table",
-      "url": "data/GE_Multi_Way.CSV",
+      "url": "https://raw.githubusercontent.com/Sze-Ler-Chuah/Data_Visualisation_2/refs/heads/main/data/GE_Multi_Way.csv",
       "format": {"type": "csv"},
       "transform": [
         {
