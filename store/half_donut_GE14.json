@@ -1,0 +1,99 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 300,
+    "height": 50,
+    "autosize": {
+        "type": "pad",
+        "contains": "padding"
+    },
+    "data": {
+      "url": "data/GE14_Absent.csv",
+      "format": {"type": "csv"}
+    },
+    "transform": [
+      {
+        "aggregate": [{"op": "count", "as": "count"}],
+        "groupby": ["CHANGE_OF_RESULT"]
+      },
+      {
+        "window": [{"op": "sum", "field": "count", "as": "total_count"}],
+        "frame": [null, null]
+      },
+      {
+        "calculate": "datum.count / datum.total_count",
+        "as": "percentage"
+      },
+      {
+        "calculate": "datum.percentage * 180",
+        "as": "angle"
+      }
+    ],
+    "layer": [
+      {
+        "mark": {
+          "type": "arc",
+          "innerRadius": 80,
+          "outerRadius": 130
+        },
+        "encoding": {
+          "theta": {
+            "field": "angle",
+            "type": "quantitative",
+            "scale": {
+              "type": "linear",
+              "rangeMax": 1.5708,
+              "rangeMin": -1.5708
+            }
+          },
+          "color": {
+            "field": "CHANGE_OF_RESULT",
+            "type": "nominal",
+            "scale": {
+              "domain": ["TRUE", "FALSE"],
+              "range": ["#f6441e", "lightgray"]
+            },
+            "legend" : null
+          },
+          "order": {
+            "field": "CHANGE_OF_RESULT",
+            "type": "nominal",
+            "sort": "descending"
+          },
+          "tooltip": [
+            {"field": "CHANGE_OF_RESULT", "type": "nominal", "title": "Change of Result"},
+            {"field": "percentage", "type": "quantitative", "title": "Percentage", "format": ".1%"}
+          ]
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "radius": 15,
+          "theta": 119.5,
+          "align": "center",
+          "baseline": "middle",
+          "fontSize": 30,
+          "fontWeight": "bold",
+          "color": "black"
+        },
+        "encoding": {
+          "text": {
+            "field": "percentage",
+            "type": "quantitative",
+            "format": ".1%"
+          },
+          "color": {
+            "condition": {
+              "test": "datum.CHANGE_OF_RESULT === 'TRUE'",
+              "value": "black"
+            },
+            "value": null
+          }
+        }
+      }
+    ],
+    "view": {
+        "stroke": null
+},
+    "config": {}
+  }

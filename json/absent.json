@@ -1,0 +1,154 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Stacked bar chart showing the win count and second place count for each party, with a horizontal line at 112 and a text label indicating 'Simple Majority'.",
+    "data": {
+      "url": "data/GE15_Absent_Impact.csv",
+      "format": {"type": "csv"}
+    },
+    "width": 500,
+    "height": 300,
+    "background": "#f0ece3",
+    "layer": [
+      {
+        "transform": [
+          {
+            "fold": ["Win", "Second Place (Absent Vote > Winning Majority)"],
+            "as": ["type", "count"]
+          },
+          {
+            "filter": {"param": "party_select"}
+          }
+        ],
+        "selection": {
+          "party_select": {
+            "type": "multi",
+            "fields": ["PARTY"],
+            "bind": {
+              "input": "select",
+              "options": [
+                null,
+                "BN",
+                "PH",
+                "PN",
+                "GPS",
+                "GRS",
+                "Warisan",
+                "Muda",
+                "KDM",
+                "Independent"
+              ],
+              "labels": [
+                "All",
+                "BN",
+                "PH",
+                "PN",
+                "GPS",
+                "GRS",
+                "Warisan",
+                "Muda",
+                "KDM",
+                "Independent"
+              ],
+              "name": "Select Party: "
+            }
+          }
+        },
+        "mark": "bar",
+        "encoding": {
+          "x": {
+            "field": "PARTY",
+            "type": "nominal",
+            "axis": 
+            {
+              "title": "Party", 
+              "grid": false
+          },
+            "sort": "-y"
+          },
+          "y": {
+            "field": "count",
+            "type": "quantitative",
+            "axis": 
+            {
+              "title": "Count", 
+              "grid": false
+            },
+            "aggregate": "sum"
+          },
+          "color": {
+            "field": "type",
+            "type": "nominal",
+            "scale": {
+              "domain": ["Win", "Second Place (Absent Vote > Winning Majority)"],
+              "range": ["#72bf77", "#c94a2e"]
+            },
+            "legend": 
+            {"title": "Type",
+            "orient": "bottom",
+            "labelFontSize": 12,
+            "titleFontSize": 12,
+          "labelLimit": 300}
+          },
+          "tooltip": [
+            {"field": "PARTY", "type": "nominal", "title": "Party"},
+            {"field": "type", "type": "nominal", "title": "Type"},
+            {"field": "count", "type": "quantitative", "title": "Count"}
+          ]
+        }
+      },
+      {
+        "mark": "rule",
+        "encoding": {
+          "y": {
+            "datum": 112,
+            "type": "quantitative"
+          },
+          "color": {"value": "#185519"},
+          "size": {"value": 0.5}
+        },
+        "mark": {
+          "type": "rule",
+          "strokeDash": [10, 2]  
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "baseline": "middle",
+          "dx": -5,
+          "dy": -10
+        },
+        "encoding": {
+          "y": {
+            "datum": 112,
+            "type": "quantitative"
+          },
+          "text": {"value": "Simple Majority"},
+          "size": {"value": 18},
+          "color": {"value": "black"}
+        }
+      }
+    ],
+    "config": {
+      "view": {
+        "stroke": null  
+      },
+      "axis": {
+        "domain": true,
+        "domainColor":"black",
+        "labelFontSize":15,
+        "labelFont": "Calibri",
+        "titleFontSize":14,
+        "titlePadding":20
+      },
+      "legend": {
+        "labelFontSize": 12,
+        "titleFontSize": 14,
+        "labelFont": "Calibri",
+        "titleFont": "Calibri",
+        "labelFontWeight": "bold",
+        "titleFontWeight": "bold"
+      }
+    }
+  }

@@ -1,0 +1,223 @@
+﻿UNIQUE_CODE,STATE,PARLIAMENTARY_CODE,PARLIAMENTARY_NAME,WINNING_PARTY, PARTY,TOTAL_ ELECTORATE,WINNING_MAJORITY,TOTAL_BALLOT_ISSUED,ABSENT_VOTE,CHANGE_OF_RESULT
+P.001,Perlis,P.001,Padang Besar,BN - UMNO,Barisan Nasional (BN),46096,1438,37432,8664,TRUE
+P.002,Perlis,P.002,Kangar,PH - PKR,Pakatan Harapan (PH),55938,5603,45703,10235,TRUE
+P.003,Perlis,P.003,Arau,BN - UMNO,Barisan Nasional (BN),48187,4856,40433,7754,TRUE
+P.004,Kedah,P.004,Langkawi,PH - PPBM,Pakatan Harapan (PH),42697,8893,35250,7447,FALSE
+P.005,Kedah,P.005,Jerlun,PH - PPBM,Pakatan Harapan (PH),54132,5866,44822,9310,TRUE
+P.006,Kedah,P.006,Kubang Pasu,PH - PPBM,Pakatan Harapan (PH),73881,13009,61452,12429,FALSE
+P.007,Kedah,P.007,Padang Terap,BN - UMNO,Barisan Nasional (BN),46644,1099,39932,6712,TRUE
+P.008,Kedah,P.008,Pokok Sena,PH - PAN,Pakatan Harapan (PH),86892,5558,71910,14982,TRUE
+P.009,Kedah,P.009,Alor Setar,PH - PKR,Pakatan Harapan (PH),80272,15200,65096,15176,FALSE
+P.010,Kedah,P.010,Kuala Kedah,PH - PKR,Pakatan Harapan (PH),97753,13481,80555,17198,TRUE
+P.011,Kedah,P.011,Pendang,GS - PAS,PAS,74867,5808,63371,11496,TRUE
+P.012,Kedah,P.012,Jerai,GS - PAS,PAS,79976,539,66920,13056,TRUE
+P.013,Kedah,P.013,Sik,GS - PAS,PAS,50385,5218,42772,7613,TRUE
+P.014,Kedah,P.014,Merbok,PH - PKR,Pakatan Harapan (PH),87782,10072,72708,15074,TRUE
+P.015,Kedah,P.015,Sungai Petani,PH - PKR,Pakatan Harapan (PH),112577,21569,93847,18730,FALSE
+P.016,Kedah,P.016,Baling,BN - UMNO,Barisan Nasional (BN),107213,1074,92128,15085,TRUE
+P.017,Kedah,P.017,Padang Serai,PH - PKR,Pakatan Harapan (PH),84834,8813,71157,13677,TRUE
+P.018,Kedah,P.018,Kulim-Bandar Baharu,PH - PKR,Pakatan Harapan (PH),66587,4860,55390,11197,TRUE
+P.019,Kelantan,P.019,Tumpat,GS - PAS,PAS,110924,17500,88733,22191,TRUE
+P.020,Kelantan,P.020,Pengkalan Chepa,GS - PAS,PAS,75384,13232,60862,14522,TRUE
+P.021,Kelantan,P.021,Kota Bharu,GS - PAS,PAS,88708,5869,68306,20402,TRUE
+P.022,Kelantan,P.022,Pasir Mas,GS - PAS,PAS,71222,13075,55319,15903,TRUE
+P.023,Kelantan,P.023,Rantau Panjang,GS - PAS,PAS,66115,6150,49639,16476,TRUE
+P.024,Kelantan,P.024,Kubang Kerian,GS - PAS,PAS,82018,19369,64867,17151,FALSE
+P.025,Kelantan,P.025,Bachok,GS - PAS,PAS,92606,3292,75945,16661,TRUE
+P.026,Kelantan,P.026,Ketereh,BN - UMNO,Barisan Nasional (BN),65238,4626,54404,10834,TRUE
+P.027,Kelantan,P.027,Tanah Merah,BN - UMNO,Barisan Nasional (BN),73172,2929,59598,13574,TRUE
+P.028,Kelantan,P.028,Pasir Puteh,GS - PAS,PAS,85411,1360,69745,15666,TRUE
+P.029,Kelantan,P.029,Machang,BN - UMNO,Barisan Nasional (BN),68387,2824,56320,12067,TRUE
+P.030,Kelantan,P.030,Jeli,BN - UMNO,Barisan Nasional (BN),47470,6647,39627,7843,TRUE
+P.031,Kelantan,P.031,Kuala Krai,GS - PAS,PAS,70348,7992,56278,14070,TRUE
+P.032,Kelantan,P.032,Gua Musang,BN - UMNO,Barisan Nasional (BN),52524,3913,41206,11318,TRUE
+P.033,Terengganu,P.033,Besut,BN - UMNO,Barisan Nasional (BN),86627,4599,72323,14304,TRUE
+P.034,Terengganu,P.034,Setiu,GS - PAS,PAS,86247,2802,73673,12574,TRUE
+P.035,Terengganu,P.035,Kuala Nerus,GS - PAS,PAS,83663,8447,73211,10452,TRUE
+P.036,Terengganu,P.036,Kuala Terengganu,GS - PAS,PAS,103611,14773,87786,15825,TRUE
+P.037,Terengganu,P.037,Marang,GS - PAS,PAS,104898,21954,92046,12852,FALSE
+P.038,Terengganu,P.038,Hulu Terengganu,BN - UMNO,Barisan Nasional (BN),73487,2868,63428,10059,TRUE
+P.039,Terengganu,P.039,Dungun,GS - PAS,PAS,90506,13119,76706,13800,TRUE
+P.040,Terengganu,P.040,Kemaman,GS - PAS,PAS,107593,2163,92007,15586,TRUE
+P.041,Pulau Pinang,P.041,Kepala Batas,BN - UMNO,Barisan Nasional (BN),60523,4736,53127,7396,TRUE
+P.042,Pulau Pinang,P.042,Tasek Gelugor,BN - UMNO,Barisan Nasional (BN),60850,81,52890,7960,TRUE
+P.043,Pulau Pinang,P.043,Bagan,PH - DAP,Pakatan Harapan (PH),71583,43902,60642,10941,FALSE
+P.044,Pulau Pinang,P.044,Permatang Pauh,PH - PKR,Pakatan Harapan (PH),81789,15668,70686,11103,FALSE
+P.045,Pulau Pinang,P.045,Bukit Mertajam,PH - DAP,Pakatan Harapan (PH),88998,52877,75977,13021,FALSE
+P.046,Pulau Pinang,P.046,Batu Kawan,PH - DAP,Pakatan Harapan (PH),65394,33553,55479,9915,FALSE
+P.047,Pulau Pinang,P.047,Nibong Tebal,PH - PKR,Pakatan Harapan (PH),73383,15817,63199,10184,FALSE
+P.048,Pulau Pinang,P.048,Bukit Bendera,PH - DAP,Pakatan Harapan (PH),75069,40731,60429,14640,FALSE
+P.049,Pulau Pinang,P.049,Tanjong,PH - DAP,Pakatan Harapan (PH),49586,29599,40130,9456,FALSE
+P.050,Pulau Pinang,P.050,Jelutong,PH - DAP,Pakatan Harapan (PH),76991,38171,64584,12407,FALSE
+P.051,Pulau Pinang,P.051,Bukit Gelugor,PH - DAP,Pakatan Harapan (PH),91595,55951,76489,15106,FALSE
+P.052,Pulau Pinang,P.052,Bayan Baru,PH - PKR,Pakatan Harapan (PH),90780,37751,75884,14896,FALSE
+P.053,Pulau Pinang,P.053,Balik Pulau,PH - PKR,Pakatan Harapan (PH),59086,6464,50564,8522,TRUE
+P.054,Perak,P.054,Gerik,BN - UMNO,Barisan Nasional (BN),35903,5528,28032,7871,TRUE
+P.055,Perak,P.055,Lenggong,BN - UMNO,Barisan Nasional (BN),29752,5773,23719,6033,TRUE
+P.056,Perak,P.056,Larut,BN - UMNO,Barisan Nasional (BN),49453,4486,40470,8983,TRUE
+P.057,Perak,P.057,Parit Buntar,PH - PAN,Pakatan Harapan (PH),51860,3098,43347,8513,TRUE
+P.058,Perak,P.058,Bagan Serai,BN - UMNO,Barisan Nasional (BN),59293,172,48381,10912,TRUE
+P.059,Perak,P.059,Bukit Gantang,BN - UMNO,Barisan Nasional (BN),69873,4089,57867,12006,TRUE
+P.060,Perak,P.060,Taiping,PH - DAP,Pakatan Harapan (PH),90729,27384,71297,19432,FALSE
+P.061,Perak,P.061,Padang Rengas,BN - UMNO,Barisan Nasional (BN),30996,2548,25698,5298,TRUE
+P.062,Perak,P.062,Sungai Siput,PH - PKR,Pakatan Harapan (PH),55002,5607,43662,11340,TRUE
+P.063,Perak,P.063,Tambun,PH - PPBM,Pakatan Harapan (PH),107763,5320,88920,18843,TRUE
+P.064,Perak,P.064,Ipoh Timor,PH - DAP,Pakatan Harapan (PH),91486,42797,71726,19760,FALSE
+P.065,Perak,P.065,Ipoh Barat,PH - DAP,Pakatan Harapan (PH),84874,45724,66852,18022,FALSE
+P.066,Perak,P.066,Batu Gajah,PH - DAP,Pakatan Harapan (PH),81399,43868,63804,17595,FALSE
+P.067,Perak,P.067,Kuala Kangsar,BN - UMNO,Barisan Nasional (BN),36954,731,30701,6253,TRUE
+P.068,Perak,P.068,Beruas,PH - DAP,Pakatan Harapan (PH),79794,27954,61617,18177,FALSE
+P.069,Perak,P.069,Parit,BN - UMNO,Barisan Nasional (BN),35910,6320,29547,6363,TRUE
+P.070,Perak,P.070,Kampar,PH - DAP,Pakatan Harapan (PH),69436,11801,53567,15869,TRUE
+P.071,Perak,P.071,Gopeng,PH - PKR,Pakatan Harapan (PH),99167,29778,80532,18635,FALSE
+P.072,Perak,P.072,Tapah,BN - MIC,Barisan Nasional (BN),47128,614,37113,10015,TRUE
+P.073,Perak,P.073,Pasir Salak,BN - UMNO,Barisan Nasional (BN),54671,7712,44508,10163,TRUE
+P.074,Perak,P.074,Lumut,PH - PAN,Pakatan Harapan (PH),67157,400,55042,12115,TRUE
+P.075,Perak,P.075,Bagan Datuk,BN - UMNO,Barisan Nasional (BN),47309,5073,37796,9513,TRUE
+P.076,Perak,P.076,Teluk Intan,PH - DAP,Pakatan Harapan (PH),66487,11179,54601,11886,TRUE
+P.077,Perak,P.077,Tanjong Malim,PH - PKR,Pakatan Harapan (PH),68468,5358,55613,12855,TRUE
+P.078,Pahang,P.078,Cameron Highlands,BN - MIC,Barisan Nasional (BN),32048,597,25326,6722,TRUE
+P.079,Pahang,P.079,Lipis,BN - UMNO,Barisan Nasional (BN),35294,6569,28666,6628,TRUE
+P.080,Pahang,P.080,Raub,PH - DAP,Pakatan Harapan (PH),57723,3159,46971,10752,TRUE
+P.081,Pahang,P.081,Jerantut,BN - UMNO,Barisan Nasional (BN),63609,5908,51414,12195,TRUE
+P.082,Pahang,P.082,Indera Mahkota,PH - PKR,Pakatan Harapan (PH),77208,10950,64612,12596,TRUE
+P.083,Pahang,P.083,Kuantan,PH - PKR,Pakatan Harapan (PH),62696,8111,52167,10529,TRUE
+P.084,Pahang,P.084,Paya Besar,BN - UMNO,Barisan Nasional (BN),55135,5742,44942,10193,TRUE
+P.085,Pahang,P.085,Pekan,BN - UMNO,Barisan Nasional (BN),88899,24859,72308,16591,FALSE
+P.086,Pahang,P.086,Maran,BN - UMNO,Barisan Nasional (BN),41036,3763,33363,7673,TRUE
+P.087,Pahang,P.087,Kuala Krau,BN - UMNO,Barisan Nasional (BN),47264,2876,39102,8162,TRUE
+P.088,Pahang,P.088,Temerloh,PH - PAN,Pakatan Harapan (PH),75081,1904,62204,12877,TRUE
+P.089,Pahang,P.089,Bentong,PH - DAP,Pakatan Harapan (PH),67359,2032,56173,11186,TRUE
+P.090,Pahang,P.090,Bera,BN - UMNO,Barisan Nasional (BN),58711,2311,48339,10372,TRUE
+P.091,Pahang,P.091,Rompin,BN - UMNO,Barisan Nasional (BN),61918,11395,50905,11013,FALSE
+P.092,Selangor,P.092,Sabak Bernam,BN - UMNO,Barisan Nasional (BN),40863,1674,34023,6840,TRUE
+P.093,Selangor,P.093,Sungai Besar,PH - PPBM,Pakatan Harapan (PH),48739,714,41878,6861,TRUE
+P.094,Selangor,P.094,Hulu Selangor,PH - PKR,Pakatan Harapan (PH),100990,13391,86798,14192,TRUE
+P.095,Selangor,P.095,Tanjong Karang,BN - UMNO,Barisan Nasional (BN),47198,1970,41184,6014,TRUE
+P.096,Selangor,P.096,Kuala Selangor,PH - PAN,Pakatan Harapan (PH),69397,8498,60843,8554,TRUE
+P.097,Selangor,P.097,Selayang,PH - PKR,Pakatan Harapan (PH),116176,40657,99450,16726,FALSE
+P.098,Selangor,P.098,Gombak,PH - PKR,Pakatan Harapan (PH),141112,48721,120548,20564,FALSE
+P.099,Selangor,P.099,Ampang,PH - PKR,Pakatan Harapan (PH),91737,41956,77539,14198,FALSE
+P.100,Selangor,P.100,Pandan,PH - PKR,Pakatan Harapan (PH),101319,52543,86514,14805,FALSE
+P.101,Selangor,P.101,Hulu Langat,PH - PAN,Pakatan Harapan (PH),102363,25424,89577,12786,FALSE
+P.102,Selangor,P.102,Bangi,PH - DAP,Pakatan Harapan (PH),178790,68768,157933,20857,FALSE
+P.103,Selangor,P.103,Puchong,PH - DAP,Pakatan Harapan (PH),96437,47635,84357,12080,FALSE
+P.104,Selangor,P.104,Subang,PH - PKR,Pakatan Harapan (PH),146422,92353,126883,19539,FALSE
+P.105,Selangor,P.105,Petaling Jaya,PH - PKR,Pakatan Harapan (PH),140920,57137,116597,24323,FALSE
+P.106,Selangor,P.106,Damansara,PH - DAP,Pakatan Harapan (PH),164322,106903,137639,26683,FALSE
+P.107,Selangor,P.107,Sungai Buloh,PH - PKR,Pakatan Harapan (PH),90707,26634,78874,11833,FALSE
+P.108,Selangor,P.108,Shah Alam,PH - PAN,Pakatan Harapan (PH),107316,33849,94241,13075,FALSE
+P.109,Selangor,P.109,Kapar,PH - PKR,Pakatan Harapan (PH),124983,16306,107829,17154,TRUE
+P.110,Selangor,P.110,Klang,PH - DAP,Pakatan Harapan (PH),149348,78773,128536,20812,FALSE
+P.111,Selangor,P.111,Kota Raja,PH - PAN,Pakatan Harapan (PH),149021,71142,129412,19609,FALSE
+P.112,Selangor,P.112,Kuala Langat,PH - PKR,Pakatan Harapan (PH),102406,17112,89437,12969,FALSE
+P.113,Selangor,P.113,Sepang,PH - PAN,Pakatan Harapan (PH),104508,18705,92087,12421,FALSE
+P.114,Wilayah Persekutuan Kuala Lumpur,P.114,Kepong,PH - DAP,Pakatan Harapan (PH),72696,51628,61812,10884,FALSE
+P.115,Wilayah Persekutuan Kuala Lumpur,P.115,Batu,INDEPENDENT,Independent,76328,24438,63600,12728,FALSE
+P.116,Wilayah Persekutuan Kuala Lumpur,P.116,Wangsa Maju,PH - PKR,Pakatan Harapan (PH),88482,24238,74509,13973,FALSE
+P.117,Wilayah Persekutuan Kuala Lumpur,P.117,Segambut,PH - DAP,Pakatan Harapan (PH),77956,45702,65265,12691,FALSE
+P.118,Wilayah Persekutuan Kuala Lumpur,P.118,Setiawangsa,PH - PKR,Pakatan Harapan (PH),72136,14372,61884,10252,FALSE
+P.119,Wilayah Persekutuan Kuala Lumpur,P.119,Titiwangsa,PH - PPBM,Pakatan Harapan (PH),61598,4139,50858,10740,TRUE
+P.120,Wilayah Persekutuan Kuala Lumpur,P.120,Bukit Bintang,PH - DAP,Pakatan Harapan (PH),69526,37260,52765,16761,FALSE
+P.121,Wilayah Persekutuan Kuala Lumpur,P.121,Lembah Pantai,PH - PKR,Pakatan Harapan (PH),80346,5598,67059,13287,TRUE
+P.122,Wilayah Persekutuan Kuala Lumpur,P.122,Seputeh,PH - DAP,Pakatan Harapan (PH),86256,56059,70583,15673,FALSE
+P.123,Wilayah Persekutuan Kuala Lumpur,P.123,Cheras,PH - DAP,Pakatan Harapan (PH),78819,49665,64074,14745,FALSE
+P.124,Wilayah Persekutuan Kuala Lumpur,P.124,Bandar Tun Razak,PH - PKR,Pakatan Harapan (PH),83650,19930,71180,12470,FALSE
+P.125,Wilayah Persekutuan Putrajaya,P.125,Putrajaya,BN - UMNO,Barisan Nasional (BN),27306,3372,24881,2425,FALSE
+P.126,Negeri Sembilan,P.126,Jelebu,BN - UMNO,Barisan Nasional (BN),48522,2045,39733,8789,TRUE
+P.127,Negeri Sembilan,P.127,Jempol,BN - UMNO,Barisan Nasional (BN),72122,1631,58523,13599,TRUE
+P.128,Negeri Sembilan,P.128,Seremban,PH - DAP,Pakatan Harapan (PH),110168,30694,93254,16914,FALSE
+P.129,Negeri Sembilan,P.129,Kuala Pilah,PH - PPBM,Pakatan Harapan (PH),49801,200,41156,8645,TRUE
+P.130,Negeri Sembilan,P.130,Rasah,PH - DAP,Pakatan Harapan (PH),102838,46867,86655,16183,FALSE
+P.131,Negeri Sembilan,P.131,Rembau,BN - UMNO,Barisan Nasional (BN),88365,4364,75315,13050,TRUE
+P.132,Negeri Sembilan,P.132,Port Dickson,PH - PKR,Pakatan Harapan (PH),75212,17710,62548,12664,FALSE
+P.133,Negeri Sembilan,P.133,Tampin,PH - PAN,Pakatan Harapan (PH),60765,1002,49515,11250,TRUE
+P.134,Melaka,P.134,Masjid Tanah,BN - UMNO,Barisan Nasional (BN),51441,8159,43093,8348,TRUE
+P.135,Melaka,P.135,Alor Gajah,PH - PPBM,Pakatan Harapan (PH),70364,6980,59000,11364,TRUE
+P.136,Melaka,P.136,Tangga Batu,PH - PKR,Pakatan Harapan (PH),83213,4659,70453,12760,TRUE
+P.137,Melaka,P.137,Hang Tuah Jaya,PH - PKR,Pakatan Harapan (PH),89364,8640,77758,11606,TRUE
+P.138,Melaka,P.138,Kota Melaka,PH - DAP,Pakatan Harapan (PH),126848,49175,107085,19763,FALSE
+P.139,Melaka,P.139,Jasin,BN - UMNO,Barisan Nasional (BN),73432,219,62912,10520,TRUE
+P.140,Johor,P.140,Segamat,PH - PKR,Pakatan Harapan (PH),55350,5476,46170,9180,TRUE
+P.141,Johor,P.141,Sekijang,PH - PKR,Pakatan Harapan (PH),45596,1281,38527,7069,TRUE
+P.142,Johor,P.142,Labis,PH - DAP,Pakatan Harapan (PH),40356,3410,33146,7210,TRUE
+P.143,Johor,P.143,Pagoh,PH - PPBM,Pakatan Harapan (PH),51512,6927,43667,7845,TRUE
+P.144,Johor,P.144,Ledang,PH - PKR,Pakatan Harapan (PH),77474,8666,66708,10766,TRUE
+P.145,Johor,P.145,Bakri,PH - DAP,Pakatan Harapan (PH),73883,23211,62632,11251,FALSE
+P.146,Johor,P.146,Muar,PH - PPBM,Pakatan Harapan (PH),50843,6953,42868,7975,TRUE
+P.147,Johor,P.147,Parit Sulong,BN - UMNO,Barisan Nasional (BN),59609,6341,50778,8831,TRUE
+P.148,Johor,P.148,Ayer Hitam,BN - MCA,Barisan Nasional (BN),46157,303,39474,6683,TRUE
+P.149,Johor,P.149,Sri Gading,PH - PPBM,Pakatan Harapan (PH),52119,3288,45193,6926,TRUE
+P.150,Johor,P.150,Batu Pahat,PH - PKR,Pakatan Harapan (PH),98543,17894,83574,14969,FALSE
+P.151,Johor,P.151,Simpang Renggam,PH - PPBM,Pakatan Harapan (PH),43998,3475,36695,7303,TRUE
+P.152,Johor,P.152,Kluang,PH - DAP,Pakatan Harapan (PH),96915,23053,81841,15074,FALSE
+P.153,Johor,P.153,Sembrong,BN - UMNO,Barisan Nasional (BN),44137,6662,36768,7369,TRUE
+P.154,Johor,P.154,Mersing,BN - UMNO,Barisan Nasional (BN),48176,8459,38306,9870,TRUE
+P.155,Johor,P.155,Tenggara,BN - UMNO,Barisan Nasional (BN),44749,5933,37818,6931,TRUE
+P.156,Johor,P.156,Kota Tinggi,BN - UMNO,Barisan Nasional (BN),46677,14621,39418,7259,FALSE
+P.157,Johor,P.157,Pengerang,BN - UMNO,Barisan Nasional (BN),40479,11417,33580,6899,FALSE
+P.158,Johor,P.158,Tebrau,PH - PKR,Pakatan Harapan (PH),123033,37225,105420,17613,FALSE
+P.159,Johor,P.159,Pasir Gudang,PH - PKR,Pakatan Harapan (PH),124172,24726,106576,17596,FALSE
+P.160,Johor,P.160,Johor Bahru,PH - PKR,Pakatan Harapan (PH),101409,19782,81645,19764,FALSE
+P.161,Johor,P.161,Pulai,PH - PAN,Pakatan Harapan (PH),106268,28924,88116,18152,FALSE
+P.162,Johor,P.162,Iskandar Puteri,PH - DAP,Pakatan Harapan (PH),138299,44864,118779,19520,FALSE
+P.163,Johor,P.163,Kulai,PH - DAP,Pakatan Harapan (PH),99147,32748,85687,13460,FALSE
+P.164,Johor,P.164,Pontian,BN - UMNO,Barisan Nasional (BN),55570,833,46683,8887,TRUE
+P.165,Johor,P.165,Tanjung Piai,PH - PPBM,Pakatan Harapan (PH),53528,524,45858,7670,TRUE
+P.166,Wilayah Persekutuan Labuan,P.166,Labuan,BN - UMNO,Barisan Nasional (BN),28356,1450,21729,6627,TRUE
+P.167,Sabah,P.167,Kudat,BN - UMNO,Barisan Nasional (BN),52251,1359,38205,14046,TRUE
+P.168,Sabah,P.168,Kota Marudu,BN - PBS,Barisan Nasional (BN),47007,1774,35231,11776,TRUE
+P.169,Sabah,P.169,Kota Belud,WARISAN,Warisan,57919,4262,47565,10354,TRUE
+P.170,Sabah,P.170,Tuaran,BN - UPKO,Barisan Nasional (BN),54400,7624,44834,9566,TRUE
+P.171,Sabah,P.171,Sepanggar,WARISAN,Warisan,62415,12984,49012,13403,TRUE
+P.172,Sabah,P.172,Kota Kinabalu,PH - DAP,Pakatan Harapan (PH),56220,24086,42973,13247,FALSE
+P.173,Sabah,P.173,Putatan,PH - PKR,Pakatan Harapan (PH),41312,2339,31865,9447,TRUE
+P.174,Sabah,P.174,Penampang,WARISAN,Warisan,53131,23473,43659,9472,FALSE
+P.175,Sabah,P.175,Papar,WARISAN,Warisan,43586,325,36540,7046,TRUE
+P.176,Sabah,P.176,Kimanis,BN - UMNO,Barisan Nasional (BN),29618,156,25519,4099,TRUE
+P.177,Sabah,P.177,Beaufort,BN - UMNO,Barisan Nasional (BN),33342,3331,28154,5188,TRUE
+P.178,Sabah,P.178,Sipitang,BN - UMNO,Barisan Nasional (BN),31882,852,25483,6399,TRUE
+P.179,Sabah,P.179,Ranau,PH - PKR,Pakatan Harapan (PH),43706,1076,33904,9802,TRUE
+P.180,Sabah,P.180,Keningau,GSABAH - STAR,Sabah Star,51177,45,40913,10264,TRUE
+P.181,Sabah,P.181,Tenom,PH - DAP,Pakatan Harapan (PH),29182,1133,23027,6155,TRUE
+P.182,Sabah,P.182,Pensiangan,BN - PBRS,Barisan Nasional (BN),31377,2314,24955,6422,TRUE
+P.183,Sabah,P.183,Beluran,BN - UMNO,Barisan Nasional (BN),28509,7115,21606,6903,FALSE
+P.184,Sabah,P.184,Libaran,BN - UMNO,Barisan Nasional (BN),47914,678,37248,10666,TRUE
+P.185,Sabah,P.185,Batu Sapi,WARISAN,Warisan,32574,4619,24029,8545,TRUE
+P.186,Sabah,P.186,Sandakan,PH - DAP,Pakatan Harapan (PH),39777,10098,28668,11109,TRUE
+P.187,Sabah,P.187,Kinabatangan,BN - UMNO,Barisan Nasional (BN),28730,9478,22257,6473,FALSE
+P.188,Sabah,P.188,Silam,WARISAN,Warisan,60942,6401,44294,16648,TRUE
+P.189,Sabah,P.189,Semporna,WARISAN,Warisan,48248,20674,34613,13635,FALSE
+P.190,Sabah,P.190,Tawau,PH - PKR,Pakatan Harapan (PH),59919,4727,43861,16058,TRUE
+P.191,Sabah,P.191,Kalabakan,WARISAN,Warisan,52199,3187,38041,14158,TRUE
+P.192,Sarawak,P.192,Mas Gading,PH - DAP,Pakatan Harapan (PH),29617,3024,22822,6795,TRUE
+P.193,Sarawak,P.193,Santubong,BN - PBB,Barisan Nasional (BN),45628,19485,33868,11760,FALSE
+P.194,Sarawak,P.194,Petra Jaya,BN - PBB,Barisan Nasional (BN),57925,15017,43513,14412,FALSE
+P.195,Sarawak,P.195,Bandar Kuching,PH - DAP,Pakatan Harapan (PH),81856,35973,61483,20373,FALSE
+P.196,Sarawak,P.196,Stampin,PH - DAP,Pakatan Harapan (PH),66240,14221,52550,13690,FALSE
+P.197,Sarawak,P.197,Kota Samarahan,BN - PBB,Barisan Nasional (BN),46300,16992,36551,9749,FALSE
+P.198,Sarawak,P.198,Puncak Borneo,PH - PKR,Pakatan Harapan (PH),46180,4005,35142,11038,TRUE
+P.199,Sarawak,P.199,Serian,BN - SUPP,Barisan Nasional (BN),37629,9905,27880,9749,FALSE
+P.200,Sarawak,P.200,Batang Sadong,BN - PBB,Barisan Nasional (BN),23213,12328,17349,5864,FALSE
+P.201,Sarawak,P.201,Batang Lupar,BN - PBB,Barisan Nasional (BN),29811,10277,20603,9208,FALSE
+P.202,Sarawak,P.202,Sri Aman,BN - PRS,Barisan Nasional (BN),33016,5820,23379,9637,TRUE
+P.203,Sarawak,P.203,Lubok Antu,INDEPENDENT,Independent,20801,1059,14785,6016,TRUE
+P.204,Sarawak,P.204,Betong,BN - PBB,Barisan Nasional (BN),29145,8116,21165,7980,FALSE
+P.205,Sarawak,P.205,Saratok,PH - PKR,Pakatan Harapan (PH),30517,989,23084,7433,TRUE
+P.206,Sarawak,P.206,Tanjong Manis,BN - PBB,Barisan Nasional (BN),21899,8674,14425,7474,FALSE
+P.207,Sarawak,P.207,Igan,BN - PBB,Barisan Nasional (BN),19592,8495,12996,6596,FALSE
+P.208,Sarawak,P.208,Sarikei,PH - DAP,Pakatan Harapan (PH),39561,2570,30895,8666,TRUE
+P.209,Sarawak,P.209,Julau,INDEPENDENT,Independent,25380,1931,18569,6811,TRUE
+P.210,Sarawak,P.210,Kanowit,BN - PRS,Barisan Nasional (BN),21022,4312,15149,5873,TRUE
+P.211,Sarawak,P.211,Lanang,PH - DAP,Pakatan Harapan (PH),61973,14546,46419,15554,TRUE
+P.212,Sarawak,P.212,Sibu,PH - DAP,Pakatan Harapan (PH),74149,11422,57689,16460,TRUE
+P.213,Sarawak,P.213,Mukah,BN - PBB,Barisan Nasional (BN),30608,7000,21205,9403,TRUE
+P.214,Sarawak,P.214,Selangau,PH - PKR,Pakatan Harapan (PH),30026,486,22352,7674,TRUE
+P.215,Sarawak,P.215,Kapit,BN - PBB,Barisan Nasional (BN),30658,10479,18485,12173,TRUE
+P.216,Sarawak,P.216,Hulu Rajang,BN - PRS,Barisan Nasional (BN),27520,6315,17727,9793,TRUE
+P.217,Sarawak,P.217,Bintulu,BN - PDP,Barisan Nasional (BN),65049,7022,48036,17013,TRUE
+P.218,Sarawak,P.218,Sibuti,BN - PBB,Barisan Nasional (BN),31868,3676,22697,9171,TRUE
+P.219,Sarawak,P.219,Miri,PH - PKR,Pakatan Harapan (PH),80386,13663,58439,21947,TRUE
+P.220,Sarawak,P.220,Baram,BN - PDP,Barisan Nasional (BN),35685,1990,22806,12879,TRUE
+P.221,Sarawak,P.221,Limbang,BN - PBB,Barisan Nasional (BN),26409,7710,17802,8607,TRUE
+P.222,Sarawak,P.222,Lawas,BN - PBB,Barisan Nasional (BN),21297,6000,14550,6747,TRUE

@@ -1,0 +1,66 @@
+[
+    {
+      "id": "Root", "parent": "", "size": null
+    },
+    {
+      "id": "Male", "parent": "Root", "size": null
+    },
+    {
+      "id": "Female", "parent": "Root", "size": null
+    },
+    {
+      "id": "18-20", "parent": "Male", "size": 694879
+    },
+    {
+      "id": "21-29", "parent": "Male", "size": 2300719
+    },
+    {
+      "id": "30-39", "parent": "Male", "size": 2333938
+    },
+    {
+      "id": "40-49", "parent": "Male", "size": 1816369
+    },
+    {
+      "id": "50-59", "parent": "Male", "size": 1508053
+    },
+    {
+      "id": "60-69", "parent": "Male", "size": 1133869
+    },
+    {
+      "id": "70-79", "parent": "Male", "size": 544346
+    },
+    {
+      "id": "80-89", "parent": "Male", "size": 175902
+    },
+    {
+      "id": "90+", "parent": "Male", "size": 43397
+    },
+    {
+      "id": "18-20", "parent": "Female", "size": 698629
+    },
+    {
+      "id": "21-29", "parent": "Female", "size": 2313673
+    },
+    {
+      "id": "30-39", "parent": "Female", "size": 2347412
+    },
+    {
+      "id": "40-49", "parent": "Female", "size": 1828862
+    },
+    {
+      "id": "50-59", "parent": "Female", "size": 1519474
+    },
+    {
+      "id": "60-69", "parent": "Female", "size": 1143221
+    },
+    {
+      "id": "70-79", "parent": "Female", "size": 549623
+    },
+    {
+      "id": "80-89", "parent": "Female", "size": 177642
+    },
+    {
+      "id": "90+", "parent": "Female", "size": 43518
+    }
+  ]
+  

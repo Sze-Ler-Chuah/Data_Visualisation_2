@@ -1,0 +1,91 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Election Results in Malaysia’s 14th General Election",
+    "font": "Calibri",
+    "fontSize": 30,
+    "fontWeight": "bold",
+    "color": "black",
+    "offset": 50
+  },
+  "width": 1200,
+  "height": 600,
+  "background": "#f0ece3",
+  "projection": {"type": "mercator", "scale": 3400, "center": [109.5, 3.5]},
+  "data": {
+    "url": "./json/malaysia.state.json",
+    "format": {"type": "topojson", "feature": "malaysia.state"}
+  },
+  "layer": [
+    {
+      "data": {"graticule": {"step": [5, 5]}},
+      "mark": {"type": "geoshape", "stroke": "black", "strokeWidth": 0.5, "strokeOpacity": 0.5, "fill": "none"}
+    },
+    {
+      "transform": [
+        {
+          "calculate": "'Data is not available in ' + datum.properties.name",
+          "as": "note"
+        }
+      ],
+      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
+      "encoding": {"tooltip": {"field": "note"}}
+    },
+    {
+      "transform": [
+        {
+          "lookup": "properties.name",
+          "from": {
+            "data": {
+              "url": "data/GE14_Winning_Party.csv"
+            },
+            "key": "STATE",
+            "fields": ["STATE", "WINNING PARTY", "Barisan Nasional (BN)", "Pakatan Harapan (PH)", "PAS", "Warisan", "Sabah Star", "Independent"]
+          }
+        }
+      ],
+      "selection": {
+        "partyFilter": {
+          "type": "multi",
+          "fields": ["WINNING PARTY"],
+          "bind": "legend"
+        }
+      },
+      "mark": {"type": "geoshape", "stroke": "#3c3d37"},
+      "encoding": {
+        "color": {
+          "field": "WINNING PARTY",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Barisan Nasional (BN)", "Pakatan Harapan (PH)", "PAS", "Warisan", "Sabah Star", "Independent"],
+            "range": ["#0169ba", "#f6441e", "#008c51", "#e6a700", "orange", "#645665"]
+          },
+          "legend": {
+            "title": "Party",
+            "titleFontSize": 20,
+            "titlePadding": 10,
+            "orient": "bottom",
+            "labelFontSize": 18,
+            "labelLimit": 280
+          }
+        },
+        "tooltip": [
+          {"field": "STATE", "type": "nominal", "title": "State"},
+          {"field": "WINNING PARTY", "type": "nominal", "title": "Winning Party"}
+        ],
+        "opacity": {
+          "condition": {"selection": "partyFilter", "value": 1},
+          "value": 0.2
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "json/neighbour_country.json",
+        "format": {"type": "topojson", "feature": "custom.geo"}
+      },
+      "mark": {"type": "geoshape", "fill": "#d3d3d3", "stroke": "white", "strokeWidth": 0.5}
+    }
+  ],
+  "config": {}
+}

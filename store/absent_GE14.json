@@ -1,0 +1,86 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": 
+    {
+      "text": "Impact of Absent Votes for Malaysia’s 14th General Election",
+      "font": "Calibri",
+      "fontSize": 28,
+      "fontWeight": "bold",
+      "color": "black"
+    },
+    "width": 1200,
+    "height": 600,
+    "background" : "#F0EBE3",
+    "projection": {"type": "mercator", "scale" : 3400, "center": [109.5, 3.5]},
+    "data": {
+      "url": "./json/mas_parliament.json",
+      "format": {"type": "topojson", "feature": "malaysia.parlimen"}
+    },
+    "layer": [
+      {
+        "data" : {"sphere": true},
+        "mark" : {"type": "geoshape", "fill": "lightblue"}
+      },
+      {
+        "data" : {"graticule": {"step": [5, 5]}},
+        "mark": {"type": "geoshape", "stroke": "black", "strokeWidth": 0.5, "strokeOpacity": 0.5, "fill": "none"} 
+      },
+      {
+        "transform": [
+          {
+            "calculate": "'Data is not available in ' + datum.properties.name",
+            "as": "note"
+          }
+        ],
+        "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "black"},
+        "encoding": {"tooltip": {"field": "note"}}
+      },
+      {
+        "transform": [
+          {
+            "lookup": "properties.code_parlimen",
+            "from": {
+              "data": {
+                "url": "data/GE14_Absent.csv"
+              },
+              "key": "PARLIAMENTARY_CODE",
+              "fields": ["STATE","PARLIAMENTARY_NAME","PARLIAMENTARY_CODE","WINNING_MAJORITY","ABSENT_VOTE","CHANGE_OF_RESULT","WINNING_PARTY"]
+            }
+          },
+          {
+            "calculate": "datum['PARLIAMENTARY_CODE'] + ' - ' + datum['PARLIAMENTARY_NAME']",
+            "as": "Parliamentary Code and Name"
+          },
+          {
+            "calculate": "datum['CHANGE_OF_RESULT'] === 'TRUE' ? 'True' : 'False'",
+            "as": "Change of Result"
+          }
+        ],
+        "mark": {"type": "geoshape", "stroke": "#3c3d37"},
+        "encoding": {
+          "color": {
+            "field": "Change of Result",
+            "type": "nominal",
+            "scale": {
+              "domain": ["True", "False"],
+              "range": ["#f6441e", "lightgray"]
+            },
+            "legend": {
+              "title": "Change of Result",
+              "orient": "bottom",
+              "gradientLength": 2000
+            }
+          },
+          "tooltip": [
+            {"field": "STATE", "type": "nominal", "title": "State"},
+            {"field": "Parliamentary Code and Name", "type": "nominal", "title": "Parliamentary"},
+            {"field": "WINNING_PARTY", "type": "nominal", "title": "Winning Party"}, 
+            {"field": "ABSENT_VOTE", "type": "quantitative", "title": "Absent Vote"},
+            {"field": "WINNING_MAJORITY", "type": "quantitative", "title": "Winning Majority"}
+            
+          ]
+        }
+      }
+    ],
+    "config": {}
+}

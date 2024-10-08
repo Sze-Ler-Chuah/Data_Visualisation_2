@@ -1,0 +1,140 @@
+{
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "description": "An example of treemap layout for hierarchical data.",
+    "width": 800,
+    "height": 600,
+    "signals": [
+      {
+        "name": "layout", "value": "squarify",
+        "bind": {
+          "input": "select",
+          "options": [
+            "squarify",
+            "binary",
+            "slicedice"
+          ]
+        }
+      },
+      {
+        "name": "Ratio", "value": 1.6,
+        "bind": {"input": "range", "min": 1, "max": 5, "step": 0.1}
+      }
+    ],
+  
+    "data": [
+      {
+        "name": "tree",
+        "url": "json/gender_age_vote_distribution.json",
+        "transform": [
+          {
+            "type": "stratify",
+            "key": "id",
+            "parentKey": "parent"
+          },
+          {
+            "type": "treemap",
+            "field": "size",
+            "sort": {"field": "value"},
+            "round": true,
+            "method": {"signal": "layout"},
+            "ratio": {"signal": "Ratio"},
+            "size": [{"signal": "width"}, {"signal": "height"}]
+          }
+        ]
+      },
+      {
+        "name": "nodes",
+        "source": "tree",
+        "transform": [{ "type": "filter", "expr": "datum.children" }]
+      },
+      {
+        "name": "leaves",
+        "source": "tree",
+        "transform": [{ "type": "filter", "expr": "!datum.children" }]
+      }
+    ],
+  
+    "scales": [
+        {
+            "name": "color",
+            "type": "linear",
+            "domain": {"data": "leaves", "field": "size"},
+            "range": ["#3795BD", "#ffffbf", "#EE66A6"]
+        }
+    ],
+    "legends": [
+        {
+            "fill": "color",
+            "title": "Number of Electors",
+            "titleFontSize": 12,
+            "orient": "right",
+            "padding": 10,
+            "gradientLength": {"signal": "height - 27"},
+            "offset": 0       
+        }
+    ],
+    "marks": [
+    {
+        "type": "rect",
+        "from": {"data": "leaves"},
+        "encode": {
+            "enter": {
+            "stroke": {"value": "#fff"}
+            },
+            "update": {
+            "x": {"field": "x0"},
+            "y": {"field": "y0"},
+            "x2": {"field": "x1"},
+            "y2": {"field": "y1"},
+            "fill": {"scale": "color", "field": "size"},
+            "fillOpacity": {"value": 1}
+            },
+            "hover": {
+            "fillOpacity": {"value": 0.3},
+            "tooltip": {"signal": "{'Gender': datum.parent, 'Age Group': datum.id, 'Number of Electors': datum.size}"}
+            }
+        }
+    },
+      {
+        "type": "text",
+        "from": {"data": "leaves"},
+        "interactive": false,
+        "encode": {
+          "enter": {
+            "font": {"value": "Calibri"},
+            "align": {"value": "center"},
+            "baseline": {"value": "bottom"},
+            "fill": {"value": "#000"},
+            "fontSize": {"value": 15},
+            "fontWeight": {"value": "bold"}
+          },
+          "update": {
+            "x": {"signal": "0.5 * (datum.x0 + datum.x1)"},
+            "y": {"signal": "0.5 * (datum.y0 + datum.y1)"},
+            "text": {"signal": "datum.parent"},
+            "fillOpacity": {"signal": "(datum.x1 - datum.x0) > 50 && (datum.y1 - datum.y0) > 20 ? 1 : 0"}
+          }
+        }
+      },
+      {
+        "type": "text",
+        "from": {"data": "leaves"},
+        "interactive": false,
+        "encode": {
+          "enter": {
+            "font": {"value": "Calibri"},
+            "align": {"value": "center"},
+            "baseline": {"value": "top"},
+            "fill": {"value": "#000"},
+            "fontSize": {"value": 14}
+          },
+          "update": {
+            "x": {"signal": "0.5 * (datum.x0 + datum.x1)"},
+            "y": {"signal": "0.5 * (datum.y0 + datum.y1)"},
+            "text": {"signal": "datum.id"},
+            "fillOpacity": {"signal": "(datum.x1 - datum.x0) > 50 && (datum.y1 - datum.y0) > 20 ? 1 : 0"}
+          }
+        }
+      }
+    ]
+  }

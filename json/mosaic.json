@@ -1,0 +1,133 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 400,
+  "background": "#f0ece3",
+  "data": {
+    "values": [
+      {"Elections": "GE14", "Total Registered Voters": 14946024, "Total Ballots": 12300067, "Total Absent": 2645957},
+      {"Elections": "GE15", "Total Registered Voters": 21173638, "Total Ballots": 15817307, "Total Absent": 5356331}
+    ]
+  },
+  "transform": [
+    {"calculate": "datum['Total Ballots'] / datum['Total Registered Voters'] ", "as": "Ballots Percentage"},
+    {"calculate": "datum['Total Absent'] / datum['Total Registered Voters'] ", "as": "Absent Percentage"},
+    {
+      "fold": ["Ballots Percentage", "Absent Percentage"],
+      "as": ["Category", "Percentage"]
+    },
+    {
+      "window": [{"op": "sum", "field": "Total Registered Voters", "as": "Cumulative Voters"}],
+      "frame": [null, 0]
+    },
+    {
+      "window": [{"op": "lag", "field": "Cumulative Voters", "as": "Previous Cumulative Voters"}],
+      "frame": [null, 1]
+    },
+    {
+      "calculate": "datum['Previous Cumulative Voters'] || 0", "as": "Start Voters"
+    },
+    {
+      "calculate": "datum['Elections'] === 'GE14' ? 0 : 14946024", "as": "Start Voters Corrected"
+    },
+    {
+      "calculate": "datum['Elections'] === 'GE14' ? 14946024 : 36119662", "as": "End Voters Corrected"
+    },
+    {
+      "calculate": "datum['Category'] === 'Absent Percentage' ? datum['Total Absent'] : datum['Total Ballots']", "as": "Votes"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "bar"
+      },
+      "encoding": {
+        "x": {
+          "field": "Start Voters Corrected",
+          "type": "quantitative",
+          "title": "Total Voters",
+          "axis": {"labelAngle": 0},
+          "scale": {"domain": [0, 36119662]}
+        },
+        "x2": {
+          "field": "End Voters Corrected"
+        },
+        "y": {
+          "field": "Percentage",
+          "type": "quantitative",
+          "title": "Percentage",
+          "stack": "normalize"
+        },
+        "color": {
+          "field": "Category",
+          "type": "nominal",
+          "title": "Category",
+          "scale": {"range": ["#EB5353", "#6BCB77"]},
+          "legend": {"title": "Vote Breakdown", "orient": "bottom"}
+        },
+        "tooltip": [
+          {"field": "Elections", "type": "nominal"},
+          {"field": "Category", "type": "nominal"},
+          {"field": "Percentage", "type": "quantitative", "format": ".2%"},
+          {"field": "Votes", "type": "quantitative", "title": "Votes"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "dx": 100,
+        "dy": 40,
+        "fontSize": 20,
+        "fontWeight": "bold",
+        "font" : "calibri"
+      },
+      "encoding": {
+        "x": {
+          "field": "Start Voters Corrected",
+          "type": "quantitative",
+          "axis": {"labelAngle": 0},
+          "scale": {"domain": [0, 36119662]}
+        },
+        "x2": {
+          "field": "End Voters Corrected"        
+        },
+        "y": {
+          "field": "Percentage",
+          "type": "quantitative",
+          "stack": "normalize"
+        },
+        "text": {
+          "field": "Elections",
+          "type": "nominal"
+        },
+        "color": {
+          "value": "black"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null  
+    },
+    "axis": {
+      "domain": true,
+      "domainColor":"black",
+      "labelFontSize":12,
+      "titleFontSize":14,
+      "titlePadding":20
+    },
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 14,
+      "labelFont": "Calibri",
+      "titleFont": "Calibri",
+      "labelFontWeight": "bold",
+      "titleFontWeight": "bold"
+    }
+  }
+}

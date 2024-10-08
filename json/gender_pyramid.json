@@ -1,0 +1,300 @@
+{
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "height": 400,
+    "padding": 5,
+  
+    "signals": [
+      { "name": "chartWidth", "value": 200 },
+      { "name": "chartPad", "value": 50 },
+      { "name": "width", "update": "1 * chartWidth + chartPad" }
+    ],
+  
+    "data": [
+      {
+        "name": "distribution",
+        "url": "data/GE14_GE15_Gender.csv",
+        "format": {"type": "csv"}
+      },
+      {
+        "name": "TOTAL",
+        "source": "distribution",
+        "transform": [
+          {
+            "type": "aggregate",
+            "groupby": ["AGE_RANGE"],
+            "fields": ["MALE", "FEMALE"],
+            "ops": ["sum", "sum"],
+            "as": ["total_male", "total_female"]
+          },
+          {
+            "type": "formula",
+            "as": "total_votes",
+            "expr": "datum.total_male + datum.total_female"
+          }
+        ]
+      },
+      {
+        "name": "MALE",
+        "source": "distribution",
+        "transform": [
+          {"type": "filter", "expr": "datum.GENDER == 'Male'"},
+          {"type": "aggregate", "groupby": ["AGE_RANGE"], "fields": ["MALE"], "ops": ["sum"], "as": ["people"]},
+          {"type": "joinaggregate", "ops": ["sum"], "fields": ["people"], "as": ["total"]},
+          {"type": "formula", "as": "percentage", "expr": "datum.people / datum.total * 100"},
+          {"type": "lookup","from": "TOTAL","key": "AGE_RANGE","fields": ["AGE_RANGE"],"values": ["total_votes"]
+          }
+        ]
+      },
+      {
+        "name": "FEMALE",
+        "source": "distribution",
+        "transform": [
+          {"type": "filter", "expr": "datum.GENDER == 'Female'"},
+          {"type": "aggregate", "groupby": ["AGE_RANGE"], "fields": ["FEMALE"], "ops": ["sum"], "as": ["people"]},
+          {"type": "joinaggregate", "ops": ["sum"], "fields": ["people"], "as": ["total"]},
+          {"type": "formula", "as": "percentage", "expr": "datum.people / datum.total * 100"},
+          {"type": "lookup","from": "TOTAL","key": "AGE_RANGE","fields": ["AGE_RANGE"],"values": ["total_votes"]
+          }
+        ]
+      }
+    ],
+  
+    "scales": [
+      {
+        "name": "y",
+        "type": "band",
+        "range": [{"signal": "height"}, 0],
+        "round": true,
+        "domain": {"data": "FEMALE", "field": "AGE_RANGE"}
+      },
+      {
+        "name": "c",
+        "type": "ordinal",
+        "domain": ["MALE", "FEMALE"],
+        "range": ["#3FA2F6", "#EF5A6F"]
+      },
+      {
+        "name": "x1",
+        "type": "linear",
+        "range": [{"signal": "chartWidth"}, 0],
+        "nice": true,
+        "zero": true,
+        "domain": {
+          "fields": [
+            {"data": "MALE", "field": "people"},
+            {"data": "FEMALE", "field": "people"}
+          ]
+        }
+      },
+      {
+        "name": "x2",
+        "type": "linear",
+        "range": [0,{"signal": "chartWidth"}],
+        "nice": true,
+        "zero": true,
+        "domain": {
+          "fields": [
+            {"data": "MALE", "field": "people"},
+            {"data": "FEMALE", "field": "people"}
+          ]
+        }
+      }
+      
+    ],
+  
+    "marks": [
+      {
+        "type": "text",
+        "interactive": false,
+        "from": {"data": "MALE"},
+        "encode": {
+          "enter": {
+            "x": {"signal": "chartWidth + chartPad / 2"},
+            "y": {"scale": "y", "field": "AGE_RANGE", "band": 0.5},
+            "text": {"field": "AGE_RANGE"},
+            "baseline": {"value": "middle"},
+            "align": {"value": "center"},
+            "fill": {"value": "#000"}
+          }
+        }
+      },
+      {
+        "type": "group",
+        "encode": {
+          "update": {
+            "x": {"value": 0},
+            "height": {"signal": "height"}
+          }
+        },
+        "axes": [
+          {
+            "orient": "bottom", 
+            "scale": "x1", 
+            "format": "s", 
+            "title": "MALE", 
+            "titleColor": "#3FA2F6", 
+            "titleFontSize": 15,
+            "tickCount": 5
+          }
+        ],
+        "marks": [
+          {
+            "type": "rect",
+            "from": {"data": "MALE"},
+            "encode": {
+              "enter": {
+                "x": {"scale": "x1", "field": "people"},
+                "x2": {"scale": "x1", "value": 0},
+                "y": {"scale": "y", "field": "AGE_RANGE"},
+                "height": {"scale": "y", "band": 1, "offset": -1},
+                "fill": {"scale": "c", "value": "MALE"},
+                "tooltip": {
+                  "signal": "{'Age Range': datum.AGE_RANGE, 'Number of Votes': datum.people, 'Total Votes': datum.total_votes}"
+                }
+              }
+            }
+          },
+          {
+            "type": "text",
+            "from": {"data": "MALE"},
+            "encode": {
+              "enter": {
+                "x": {"scale": "x1", "field": "people", "offset": -5},
+                "y": {"scale": "y", "field": "AGE_RANGE", "band": 0.5},
+                "text": {"signal": "format(datum.percentage, '.1f') + '%'"},
+                "baseline": {"value": "middle"},
+                "align": {"value": "right"},
+                "fill": {"value": "#000"}
+              }
+            }
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "encode": {
+          "update": {
+            "x": {"signal": "chartWidth + chartPad"},
+            "height": {"signal": "height"}
+          }
+        },
+        "axes": [
+          {
+            "orient": "bottom", 
+            "scale": "x2", 
+            "format": "s", 
+            "title": "FEMALE", 
+            "titleColor": "#EF5A6F", 
+            "titleFontSize": 15,
+            "tickCount": 5
+          }
+        ],
+        "marks": [
+          {
+            "type": "rect",
+            "from": {"data": "FEMALE"},
+            "encode": {
+              "enter": {
+                "x": {"scale": "x2", "field": "people"},
+                "x2": {"scale": "x2", "value": 0},
+                "y": {"scale": "y", "field": "AGE_RANGE"},
+                "height": {"scale": "y", "band": 1, "offset": -1},
+                "fill": {"scale": "c", "value": "FEMALE"},
+                "tooltip": {
+                    "signal": "{'Age Range': datum.AGE_RANGE, 'Number of Votes': datum.people, 'Total Votes': datum.total_votes}"
+                }
+              }
+            }
+          },
+          {
+            "type": "text",
+            "from": {"data": "FEMALE"},
+            "encode": {
+              "enter": {
+                "x": {"scale": "x2", "field": "people", "offset": 5},
+                "y": {"scale": "y", "field": "AGE_RANGE", "band": 0.5},
+                "text": {"signal": "format(datum.percentage, '.1f') + '%'"},
+                "baseline": {"value": "middle"},
+                "align": {"value": "left"},
+                "fill": {"value": "#000"}
+              }
+            }
+          },
+          {
+            "type": "rule",
+            "encode": {
+              "enter": {
+                "x": {"value": 150},
+                "y": {"value": 100},
+                "x2": {"value": 100},
+                "y2": {"value": 300},
+                "stroke": {"value": "black"},
+                "strokeWidth": {"value": 1}
+              }
+            }
+          },
+          {
+            "type": "rule",
+            "encode": {
+              "enter": {
+                "x": {"value": 150},
+                "y": {"value": 100},
+                "x2": {"value": -90},
+                "y2": {"value": 300},
+                "stroke": {"value": "black"},
+                "strokeWidth": {"value": 1}
+              }
+            }
+          },
+          {
+            "type": "text",
+            "encode": {
+              "enter": {
+                "x": {"value": 70},
+                "y": {"value": 50},
+                "text": {"value": "Age group 30-39 has the\n highest distribution in both\n GE14 and GE15, consists\n of 24.3% and 22.1% individually"},
+                "fill": {"value": "black"},
+                "fontSize": {"value": 12},
+                "lineBreak": {"value": "\n"}
+              }
+            }
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "encode": {
+          "enter": {
+            "x": {"signal": "chartWidth + chartPad / 2"},
+            "y": {"value": -20},
+            "text": {"value": "Age Range"},
+            "baseline": {"value": "middle"},
+            "align": {"value": "center"},
+            "fontSize": {"value": 14},
+            "fontWeight": {"value": "bold"},
+            "fill": {"value": "#000"}
+          }
+        }
+      }
+    ],
+    "config": {
+      "view": {
+        "stroke": null  
+      },
+      "axis": {
+        "domain": true,
+        "domainColor":"black",
+        "labelFontSize":12,
+        "titleFontSize":14,
+        "titlePadding":20
+      },
+      "legend": {
+        "labelFontSize": 12,
+        "titleFontSize": 14,
+        "labelFont": "Calibri",
+        "titleFont": "Calibri",
+        "labelFontWeight": "bold",
+        "titleFontWeight": "bold"
+      }
+    }
+  }

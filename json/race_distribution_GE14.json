@@ -1,0 +1,117 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Race Distribution for Parliamentary Seats in Malaysia's 14th General Election",
+    "font": "Calibri",
+    "fontSize": 30,
+    "fontWeight": "bold",
+    "color": "black",
+    "offset": 50
+  },
+  "width": 1200,
+  "height": 600,
+  "background": "#F0EBE3",
+  "projection": {
+    "type": "mercator",
+    "scale": 3400,
+    "center": [109.5, 3.5]
+  },
+  "data": {
+    "url": "./json/mas_parliament.json",
+    "format": {"type": "topojson", "feature": "malaysia.parlimen"}
+  },
+  "layer": [
+    {
+      "data": {"graticule": {"step": [5, 5]}},
+      "mark": {"type": "geoshape", "stroke": "black", "strokeWidth": 0.5, "strokeOpacity": 0.5, "fill": "none"}
+    },
+    {
+      "transform": [
+        {
+          "lookup": "properties.code_parlimen",
+          "from": {
+            "data": {
+              "url": "./data/GE14_Race_Distribution_Wide.csv",
+              "format": {"type": "csv"}
+            },
+            "key": "UNIQUE_CODE",
+            "fields": ["UNIQUE_CODE", "PARLIAMENTARY_NAME", "Malay", "Chinese", "Indian", "Orang Asli", "Bumiputera Sabah", "Bumiputera Sarawak", "Others"]
+          }
+        },
+        {
+          "calculate": "parseFloat(datum.Malay) > parseFloat(datum.Chinese) ? parseFloat(datum.Malay) : parseFloat(datum.Chinese)",
+          "as": "max1"
+        },
+        {
+          "calculate": "datum.max1 > parseFloat(datum.Indian) ? datum.max1 : parseFloat(datum.Indian)",
+          "as": "max2"
+        },
+        {
+          "calculate": "datum.max2 > parseFloat(datum['Orang Asli']) ? datum.max2 : parseFloat(datum['Orang Asli'])",
+          "as": "max3"
+        },
+        {
+          "calculate": "datum.max3 > parseFloat(datum['Bumiputera Sabah']) ? datum.max3 : parseFloat(datum['Bumiputera Sabah'])",
+          "as": "max4"
+        },
+        {
+          "calculate": "datum.max4 > parseFloat(datum['Bumiputera Sarawak']) ? datum.max4 : parseFloat(datum['Bumiputera Sarawak'])",
+          "as": "max5"
+        },
+        {
+          "calculate": "datum.max5 > parseFloat(datum.Others) ? datum.max5 : parseFloat(datum.Others)",
+          "as": "maxValue"
+        },
+        {
+          "calculate": "parseFloat(datum.Malay) == datum.maxValue ? 'Malay' : parseFloat(datum.Chinese) == datum.maxValue ? 'Chinese' : parseFloat(datum.Indian) == datum.maxValue ? 'Indian' : parseFloat(datum['Orang Asli']) == datum.maxValue ? 'Orang Asli' : parseFloat(datum['Bumiputera Sabah']) == datum.maxValue ? 'Bumiputera Sabah' : parseFloat(datum['Bumiputera Sarawak']) == datum.maxValue ? 'Bumiputera Sarawak' : 'Others'",
+          "as": "maxRace"
+        },
+        {
+          "calculate": "datum.UNIQUE_CODE + ' - ' + datum.PARLIAMENTARY_NAME",
+          "as": "Parliamentary Code and Name"
+        }
+      ],
+      "selection": {
+        "raceFilter": {
+          "type": "multi",
+          "fields": ["maxRace"],
+          "bind": "legend"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#3c3d37",
+        "strokeWidth": 0.5
+      },
+      "encoding": {
+        "color": {
+          "field": "maxRace",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Malay", "Chinese", "Indian", "Orang Asli", "Bumiputera Sabah", "Bumiputera Sarawak", "Others"],
+            "range": ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2"]
+          },
+          "legend": {
+            "title": "Race with the Highest Population (Count)",
+            "orient": "bottom",
+            "titleFontSize": 20,
+            "titlePadding": 10,
+            "labelFontSize": 15,
+            "columns": 7,
+            "labelLimit": 300,
+            "titleLimit": 400
+          }
+        },
+        "tooltip": [
+          {"field": "Parliamentary Code and Name", "type": "nominal", "title": "Parliament"},
+          {"field": "maxRace", "type": "nominal", "title": "Race"}
+        ],
+        "opacity": {
+          "condition": {"selection": "raceFilter", "value": 1},
+          "value": 0.2
+        }
+      }
+    }
+  ],
+  "config": {}
+}

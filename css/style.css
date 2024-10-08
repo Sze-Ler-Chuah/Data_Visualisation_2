@@ -1,0 +1,270 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#dashboard {
+    height: 6000px;
+    background-color: #F0EBE3;
+    width: 100%;
+}
+
+#title {
+	text-align: center;
+	font-size:35px;
+}
+
+#title hr {
+    height: 5px;
+    background-color: #000; /* Adjust color as needed */
+    margin: -10px auto 20px auto; /* Adjust margin as needed */
+}
+
+#background h2 {
+	font-size: 35px;
+	color: #000;
+	text-align: center;
+}
+
+#background p{
+	font-size: 25px;
+    font-style: calibri;
+	background-color: #F0EBE3;
+	text-align: center;
+}
+
+#buttons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+#buttons button {
+    background-color: #003152; /* Green background */
+    border: none; /* Remove border */
+    color: white; /* White text */
+    padding: 15px 32px; /* Padding */
+    text-align: center; /* Center text */
+    font-size: 20px; /* Font size */
+	font-weight: bold;
+    margin: 0px 30px; /* Margin */
+    cursor: pointer; /* Pointer cursor */
+    flex: 1; /* Equal width */
+    margin: 0;
+}
+
+#buttons button:not(:last-child) {
+    border-right: 1px solid white; /* Add border between buttons */
+}
+
+#buttons button:hover {
+    background-color: #6092ae; /* Green background on hover */
+    color: white; /* White text on hover */
+}
+
+#switchButton {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically if needed */
+}
+
+#toggleButton {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically if needed */
+    background-color: #c84a31; /* Green background */
+    color: white; /* White text */
+    padding: 10px 30px; /* Padding */
+    text-align: center; /* Center text */
+    font-size: 18px; /* Font size */
+    font-weight: bold;
+    margin: 0px 10px; /* Margin */
+    cursor: pointer; /* Pointer cursor */
+    border-radius: 5px; /* Rounded corners */
+    border : none;
+}
+
+#switchButton button:hover {
+    background-color: #FF8343; /* Green background on hover */
+    color: white; /* White text on hover */
+}
+
+#switchButtonLabel {
+    font-size: 20px; /* Font size */
+    font-weight: bold; /* Bold text */
+    color: #003152; /* Text color */
+}
+
+
+#vis {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 40px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+#tooltip {
+    position: absolute;
+    background-color: #F0EBE3;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1000; /* Increased z-index to ensure it appears on top */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+    border-radius: 8px; /* Rounded corners */
+    display: none; /* Initially hidden */
+}
+
+#vis-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 20px;
+}
+
+#absent_title{
+    font-size: 30px;
+    font-style: calibri;
+    color: #000;
+    text-align: center;
+}
+
+#absent_chart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    
+}
+
+#absent{
+    padding-right: 50px;
+}
+
+#absent_text{
+    padding-right: 50px;
+    font-size: 20px;
+    font-style: calibri;
+    color: #000;
+}
+
+#radar_title{
+    font-size: 30px;
+    font-style: calibri;
+    color: #000;
+    text-align: center;
+}
+
+#radar_chart {
+    display: flex;
+    align-items: start;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#radar {
+    flex:1;
+    padding-left: 40px;
+}
+
+#radar_text{
+    flex:2;
+    font-size: 20px;
+    font-style: calibri;
+    color: #000;
+    padding-left: 40px;
+}
+
+#undi18_title{
+    font-size: 30px;
+    font-style: calibri;
+    color: #000;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#mosaic_chart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#mosaic {
+    padding-left: 40px;
+}
+
+#mosaic_text {
+    font-size: 20px;
+    font-style: calibri;
+    color: #000;
+    padding-right: 40px;
+}
+
+#pyramid_chart {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#pop_pyramid_chart{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#pop_pyramid {
+    padding-left: 40px;
+}
+
+#pop_pyramid_text{
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+    margin-top: 10px;
+    padding-right: 100px;
+}
+
+#treemap_chart {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-left: 40px;
+}
+
+.ge14-text {
+    color: #7E60BF;
+    font-weight: bold;
+}
+
+.ge15-text {
+    color:#295F98;
+    font-weight: bold;
+}
+
+.male-text{
+    color:#3FA2F6;
+    font-weight:bold;
+}
+
+.female-text{
+    color:#EF5A6F;
+    font-weight:bold;
+}
+
+.majority-text{
+    color:#0D7C66;
+    font-weight:bold;
+}

@@ -1,0 +1,199 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "data/GE15_Absent_Impact.csv",
+    "format": {"type": "csv"}
+  },
+  "width": 600,
+  "height": 500,
+  "background": "#f0ece3",
+  "transform": [
+    {
+      "calculate": "parseFloat(datum['Seats Won'])", "as": "Win"
+    },
+    {
+      "calculate": "parseFloat(datum['Second Place (Absent Vote > Winning Majority)'])", "as": "Second Place (Absent Vote > Winning Majority)"
+    },
+    {
+      "calculate": "parseFloat(datum['Potential Winning Seats'])", "as": "Potential Winning Seats"
+    },
+    {
+      "fold": ["Win", "Second Place (Absent Vote > Winning Majority)", "Potential Winning Seats"],
+      "as": ["Category", "Value"]
+    },
+    {
+      "joinaggregate": [
+        {"op": "min", "field": "Value", "as": "minValue"},
+        {"op": "max", "field": "Value", "as": "maxValue"}
+      ],
+      "groupby": ["Category"]
+    },
+    {
+      "calculate": "(datum.Value - datum.minValue) / (datum.maxValue - datum.minValue)",
+      "as": "norm_val"
+    },
+    {
+      "calculate": "(datum.maxValue + datum.minValue) / 2",
+      "as": "midValue"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#000"
+      },
+      "encoding": {
+        "x": {"field": "Category", "type": "nominal"}
+      }
+    },
+    {
+      "selection": {
+        "partyFilter": {
+          "type": "multi",
+          "fields": ["PARTY"],
+          "bind": "legend",
+          "init": {"PARTY": "PH"}
+        }
+      },
+      "mark": "line",
+      "encoding": {
+        "color": {
+          "type": "nominal", 
+          "field": "PARTY",
+          "scale": {
+            "domain": ["BN", "PH", "PN", "GPS", "GRS", "PBM", "KDM", "Warisan", "Muda", "Independent"],
+            "range": ["#0169ba", "#f6441e","#9944b9","#e6a700","#54b3e3","#008c51","#f39c60","#ea7dcd","#950300","#645665"]
+          },
+          "legend": {
+            "title": "Party",
+            "orient": "right",
+            "labelFontSize": 14,
+            "titleFontSize": 16,
+            "offset": -50
+          }
+        },
+        "opacity": {
+          "condition": {"selection": "partyFilter", "value": 1},
+          "value": 0.3
+        },
+        "strokeWidth": {
+          "condition": [
+            {"test": "datum.PARTY === 'PH'", "value": 4}
+          ],
+          "value": 1
+        },
+        "detail": {"type": "nominal", "field": "Index"},
+        "x": {
+          "type": "nominal",
+          "field": "Category",
+          "scale": {
+            "domain": ["Win", "Second Place (Absent Vote > Winning Majority)", "Potential Winning Seats"]
+          }
+        },
+        "y": {
+          "type": "quantitative",
+          "field": "norm_val",
+          "axis": null
+        },
+        "tooltip": [
+          {"type": "quantitative", "field": "Win"},
+          {"type": "quantitative", "field": "Second Place (Absent Vote > Winning Majority)"},
+          {"type": "quantitative", "field": "Potential Winning Seats"}
+        ]
+      }
+    },
+    {
+      "encoding": {
+        "x": {"type": "nominal", "field": "Category"},
+        "y": {"value": 0}
+      },
+      "layer": [
+        {
+          "mark": {"type": "text", "style": "label"},
+          "encoding": {
+            "text": {"aggregate": "max", "field": "maxValue"}
+          }
+        },
+        {
+          "mark": {"type": "tick", "style": "tick", "size": 8, "color": "#ccc"}
+        }
+      ]
+    },
+    {
+      "encoding": {
+        "x": {"type": "nominal", "field": "Category"},
+        "y": {"value": 250}
+      },
+      "layer": [
+        {
+          "mark": {"type": "text", "style": "label"},
+          "encoding": {
+            "text": {"aggregate": "max", "field": "midValue"}
+          }
+        },
+        {
+          "mark": {"type": "tick", "style": "tick", "size": 8, "color": "#ccc"}
+        }
+      ]
+    },
+    {
+      "encoding": {
+        "x": {"type": "nominal", "field": "Category"},
+        "y": {"value": 500}
+      },
+      "layer": [
+        {
+          "mark": {"type": "text", "style": "label"},
+          "encoding": {
+            "text": {"aggregate": "max", "field": "minValue"}
+          }
+        },
+        {
+          "mark": {"type": "tick", "style": "tick", "size": 8, "color": "#ccc"}
+        }
+      ]
+    },
+    {
+      "mark": {
+        "type": "text",
+        "color": "#0D7C66",
+        "dx": -15,
+        "dy": -5,
+        "fontSize": 15
+      },
+      "encoding": {
+        "x": {
+          "type": "nominal",
+          "field": "Category",
+          "scale": {
+            "domain": ["Win", "Second Place (Absent Vote > Winning Majority)", "Potential Winning Seats"]
+          }
+        },
+        "y": {
+          "type": "quantitative",
+          "value": 112
+        },
+        "text": {"value": "112"}
+      },
+      "transform": [
+        {"filter": "datum.Category === 'Potential Winning Seats'"}
+      ]
+    }
+  ],
+  "config": {
+    "axisX": {
+      "domain": false, 
+      "labelAngle":0, 
+      "tickColor": "#ccc", 
+      "title": null,
+      "labelFontSize": 12,
+      "labelLimit": 300
+    },
+    "view": {"stroke": null},
+    "style": {
+      "label": {"baseline": "middle", "align": "right", "dx": -5, "dy":-10, "fontSize": 15},
+      "tick": {"orient": "horizontal"}
+    }
+  }
+}
