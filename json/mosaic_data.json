@@ -1,0 +1,14 @@
+[
+    {
+       "Elections":"GE14",
+       "Total Registered Voters": 14946024,
+       "Total Ballots": 12300067,
+       "Total Absent": 2645957
+    },
+    {
+        "Elections":"GE15",
+        "Total Registered Voters": 21173638,
+        "Total Ballots": 15817307,
+        "Total Absent": 5356331
+     }
+]

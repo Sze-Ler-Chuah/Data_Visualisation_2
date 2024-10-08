@@ -3,7 +3,6 @@
   "width": 500,
   "height": 500,
   "padding": {"left": -150, "right": 10, "top": -100, "bottom": 10},  
-  "background": "lightgray",
   "signals": [
     {"name": "radius", "update": "width / 2.5"}
   ],
@@ -78,7 +77,7 @@
   "legends": [
     {
       "fill": "color",
-      "title": "Election",
+      "title": "Election", 
       "orient": "top-left",
       "offset": -250,
       "encode": {
@@ -163,23 +162,6 @@
               }
             }
           }
-        },
-        {
-          "type": "text",
-          "name": "value-text",
-          "from": {"data": "category-line"},
-          "encode": {
-            "enter": {
-              "x": {"signal": "datum.x"},
-              "y": {"signal": "datum.y"},
-              "text": {"signal": "datum.datum.AMOUNT"},
-              "align": {"value": "center"},
-              "baseline": {"value": "top"},
-              "fill": {"value": "black"},
-              "fontWeight": {"value": "bold"},
-              "fontSize": {"value": 15}
-            }
-          }
         }
       ]
     },
@@ -194,6 +176,12 @@
           "y": {"value": 0},
           "x2": {"signal": "radius * cos(scale('angular', datum.WAY_COUNT))"},
           "y2": {"signal": "radius * sin(scale('angular', datum.WAY_COUNT))"},
+          "x3": {"signal": "radius*0.75 * cos(scale('angular', datum.WAY_COUNT))"},
+          "y3": {"signal": "radius*0.75 * sin(scale('angular', datum.WAY_COUNT))"},
+          "x4": {"signal": "radius*0.5 * cos(scale('angular', datum.WAY_COUNT))"},
+          "y4": {"signal": "radius*0.5 * sin(scale('angular', datum.WAY_COUNT))"},
+          "x5": {"signal": "radius*0.25 * cos(scale('angular', datum.WAY_COUNT))"},
+          "y5": {"signal": "radius*0.25 * sin(scale('angular', datum.WAY_COUNT))"},
           "stroke": {"value": "lightgray"},
           "strokeWidth": {"value": 1}
         }
@@ -226,8 +214,110 @@
           "interpolate": {"value": "linear-closed"},
           "x": {"field": "x2"},
           "y": {"field": "y2"},
-          "stroke": {"value": "black"},
+          "stroke": {"value": "lightgray"},
           "strokeWidth": {"value": 2}
+        }
+      }
+    },
+    {
+      "type": "line",
+      "name": "outer-line-2",
+      "from": {"data": "radial-grid"},
+      "encode": {
+        "enter": {
+          "interpolate": {"value": "linear-closed"},
+          "x": {"field": "x3"},
+          "y": {"field": "y3"},
+          "stroke": {"value": "lightgray"},
+          "strokeWidth": {"value": 2}
+        }
+      }
+    },
+    {
+      "type": "line",
+      "name": "outer-line-3",
+      "from": {"data": "radial-grid"},
+      "encode": {
+        "enter": {
+          "interpolate": {"value": "linear-closed"},
+          "x": {"field": "x4"},
+          "y": {"field": "y4"},
+          "stroke": {"value": "lightgray"},
+          "strokeWidth": {"value": 2}
+        }
+      }
+    },
+    {
+      "type": "line",
+      "name": "outer-line-4",
+      "from": {"data": "radial-grid"},
+      "encode": {
+        "enter": {
+          "interpolate": {"value": "linear-closed"},
+          "x": {"field": "x5"},
+          "y": {"field": "y5"},
+          "stroke": {"value": "lightgray"},
+          "strokeWidth": {"value": 2}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "name": "radial-grid-label-1",
+      "from": {"data": "radial-grid"},
+      "encode": {
+        "enter": {
+          "x": {"signal": "radius-180"},
+          "y": {"value": 195},
+          "text": {"value": "150"},
+          "baseline": {"value": "middle"},
+          "fill": {"value": "black"},
+          "fontSize": {"value": 15}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "name": "radial-grid-label-2",
+      "from": {"data": "radial-grid"},
+      "encode": {
+        "enter": {
+          "x": {"signal": "(radius * 0.75)-145"},
+          "y": {"value": 145},
+          "text": {"value": "112.5"},
+          "baseline": {"value": "middle"},
+          "fill": {"value": "black"},
+          "fontSize": {"value": 15}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "name": "radial-grid-label-3",
+      "from": {"data": "radial-grid"},
+      "encode": {
+        "enter": {
+          "x": {"signal": "(radius * 0.5)-90"},
+          "y": {"value": 95},
+          "text": {"value": "75"},
+          "baseline": {"value": "middle"},
+          "fill": {"value": "black"},
+          "fontSize": {"value": 15}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "name": "radial-grid-label-4",
+      "from": {"data": "radial-grid"},
+      "encode": {
+        "enter": {
+          "x": {"signal": "(radius * 0.25)-55"},
+          "y": {"value": 45},
+          "text": {"value": "37.5"},
+          "baseline": {"value": "middle"},
+          "fill": {"value": "black"},
+          "fontSize": {"value": 15}
         }
       }
     }
