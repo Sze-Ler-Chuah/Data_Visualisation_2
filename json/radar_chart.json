@@ -9,7 +9,7 @@
   "data": [
     {
       "name": "table",
-      "url": "data/GE_MULTI_WAY.CSV",
+      "url": "data/GE_Multi_Way.CSV",
       "format": {"type": "csv"},
       "transform": [
         {
