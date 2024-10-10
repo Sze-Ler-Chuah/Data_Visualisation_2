@@ -1,7 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "height": 800,
-  "width": 800,
   "background": "#f0ece3",
   "data": {
     "url": "data/GE14_GE15_Voters.csv",
@@ -34,13 +32,18 @@
   "spacing": 0,
   "hconcat": [
     {
-      "height": 500,
-      "width": 300,
+      "height": 530,
+      "width": 250,
       "transform": [
         {"filter": {"field": "Election", "equal": "GE14"}},
         {"filter": "datum.people >= voterSelection.people"}
       ],
-      "title": "GE14",
+      "title": {
+        "text": "GE14",
+        "fontSize": 20,
+        "anchor": "middle",
+        "color": "#7E60BF"
+      },
       "layer": [
         {
           "mark": "bar",
@@ -54,8 +57,15 @@
             "x": {
               "aggregate": "sum",
               "field": "people",
-              "title": "Number of Electors",
-              "axis": {"format": "s"},
+              "title":  null,
+              "axis": {
+                "format": "s",
+                "domain": false,
+                "ticks": false,
+                "labelFontSize": 14,
+                "labelPadding": 20,
+                "labelColor": "#88827e"
+              },
               "scale": {"domain": [5000000, 0]}  
             },
             "color": {
@@ -78,7 +88,9 @@
             "type": "text",
             "align": "left",
             "baseline": "middle",
-            "dx": -45
+            "dx": -55,
+            "fontSize": 14,
+            "color": "#000000"
           },
           "encoding": {
             "y": {
@@ -96,55 +108,153 @@
               "field": "percentage",
               "type": "quantitative",
               "format": ".2%"
+            },
+            "opacity": {
+              "condition": {
+                "selection": "ageSelection",
+                "value": 1
+              },
+              "value": 0.3
             }
           }
         },
         {
-          "mark": {
-            "type": "rule",
-            "color": "black",
-            "strokeWidth": 0.5
-          },
-          "encoding": {
-            "x": {"value": 300},
-            "x2": {"value": 220},
-            "y": {"value": 490},
-            "y2": {"value": 480}
-          }
-        },
-        {
-          "mark": {
-            "type": "rule",
-            "color": "black",
-            "strokeWidth": 0.5
-          },
-          "encoding": {
-            "x": {"value": 300},
-            "x2": {"value": 250},
-            "y": {"value": 50},
-            "y2": {"value": 350}
-          }
-        },
-        {
-          "mark": {
-            "type": "text",
-            "baseline": "middle",
-            "dx": -50,
-            "dy": 220,
-            "fontSize": 15,
-            "font":"Calibri"
-          },
-          "encoding": {
-            "text": {
-              "value": "Undi-18 is not introduced in GE14 yet"
+          "transform": [
+            {
+              "aggregate": [
+                {"op": "sum", "field": "people", "as": "total"}
+              ]
+            }
+          ],
+          "layer": [
+            {
+              "mark": {
+                "type": "rule",
+                "color": "black",
+                "strokeWidth": 1
+              },
+              "encoding": {
+                "x": {"value": 190},
+                "x2": {"value": 120},
+                "y": {"value": 500},
+                "y2": {"value": 500}
+              }
             },
-            "color": {"value": "black"}
-          }
+            {
+              "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": -150,
+                "dy": 220,
+                "fontSize": 14.5,
+                "font":"Calibri"
+              },
+              "encoding": {
+                "text": {
+                  "value": "Undi-18 is not"
+                },
+                "color": {"value": "black"}
+              }
+            },
+            {
+              "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": -150,
+                "dy": 235,
+                "fontSize": 14.5,
+                "font":"Calibri"
+              },
+              "encoding": {
+                "text": {
+                  "value": "introduced in GE14 yet"
+                },
+                "color": {"value": "black"}
+              }
+            },
+            {
+              "mark": {
+                "type": "rule",
+                "color": "black",
+                "strokeWidth": 1
+              },
+              "encoding": {
+                "x": {"value": 200},
+                "x2": {"value": 100},
+                "y": {"value": 390},
+                "y2": {"value": 350}
+              }
+            },
+            {
+              "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": -150,
+                "dy": 25,
+                "fontSize": 15,
+                "font":"Calibri"
+              },
+              "encoding": {
+                "text": {
+                  "value": "Same as GE15,"
+                },
+                "color": {"value": "black"}
+              }
+            },
+            {
+              "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": -150,
+                "dy": 40,
+                "fontSize": 15,
+                "font":"Calibri"
+              },
+              "encoding": {
+                "text": {
+                  "value": "electors of age 30-39"
+                },
+                "color": {"value": "black"}
+              }
+            },
+            {
+              "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": -150,
+                "dy": 55,
+                "fontSize": 15,
+                "font":"Calibri"
+              },
+              "encoding": {
+                "text": {
+                  "value": "have more political"
+                },
+                "color": {"value": "black"}
+              }
+            },
+            {
+              "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": -150,
+                "dy": 70,
+                "fontSize": 15,
+                "font":"Calibri"
+              },
+              "encoding": {
+                "text": {
+                  "value": "awareness than others"
+                },
+                "color": {"value": "black"}
+              }
+            }
+          ]
         }
       ]
     },
     {
-      "height": 500,
+      "height": 530,
       "width": 50,
       "view": {"stroke": null},
       "selection": {
@@ -156,13 +266,15 @@
         "voterSelection": {
           "type": "single",
           "fields": ["people"],
-          "bind": {"input": "range", "min": 0, "max": 5000000, "step":100000, "name": "Minimum number of electors:"},
+          "bind": {"input": "range", "min": 0, "max": 5000000, "step":100000, "name": "Minimum Number Of Electors:"},
           "init": {"people": 0}
         }
       },
       "mark": {
         "type": "text",
-        "align": "center"
+        "align": "center",
+        "size": 13,
+        "color": "#46423f"
       },
       "encoding": {
         "y": {"field": "AGE_RANGE", "type": "ordinal", "axis": null, "sort": "descending"},
@@ -170,13 +282,18 @@
       }
     },
     {
-      "height": 500,
-      "width": 300,
+      "height": 530,
+      "width": 250,
       "transform": [
         {"filter": {"field": "Election", "equal": "GE15"}},
         {"filter": "datum.people >= voterSelection.people"}
       ],
-      "title": "GE15",
+      "title": {
+        "text": "GE15",
+        "fontSize": 20,
+        "anchor": "middle",
+        "color": "#295F98"
+      },
       "layer": [
         {
           "mark": "bar",
@@ -192,7 +309,14 @@
               "aggregate": "sum",
               "field": "people",
               "title": "Number of Electors",
-              "axis": {"format": "s"},
+              "axis": {
+                "labelColor": "#88827e",
+                "format": "s", 
+                "domain": false, 
+                "ticks": false, 
+                "labelFontSize": 14,
+                "labelPadding": 20
+              },
               "scale": {"domain": [0, 5000000]} 
             },
             "color": {
@@ -213,7 +337,9 @@
             "type": "text",
             "align": "left",
             "baseline": "middle",
-            "dx": 10
+            "dx": 10,
+            "fontSize": 14,
+            "color": "#000000"
           },
           "encoding": {
             "y": {
@@ -225,14 +351,94 @@
             "x": {
               "aggregate": "sum",
               "field": "people",
+              "title" : null,
               "scale": {"domain": [0, 5000000]}  
             },
             "text": {
               "field": "percentage",
               "type": "quantitative",
               "format": ".2%"
+            },
+            "opacity": {
+              "condition": {
+                "selection": "ageSelection",
+                "value": 1
+              },
+              "value": 0.3
             }
           }
+        },
+        {
+          "transform": [
+            {
+              "aggregate": [
+                {"op": "sum", "field": "people", "as": "total"}
+              ]
+            }
+          ],
+          "layer": [
+            {
+              "mark": {
+                "type": "rule",
+                "color": "black",
+                "strokeWidth": 1
+              },
+              "encoding": {
+                "x": {"value": 100},
+                "x2": {"value": 130},
+                "y": {"value": 380},
+                "y2": {"value": 130}
+              }
+            },
+            {
+              "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": -10,
+                "dy": -200,
+                "fontSize": 15,
+                "font":"Calibri"
+              },
+              "encoding": {
+                "text": {
+                  "value": "Electors of age 30-39"
+                },
+                "color": {"value": "black"}
+              }
+            },
+            {
+              "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": -10,
+                "dy": -185,
+                "fontSize": 15,
+                "font":"Calibri"
+              },
+              "encoding": {
+                "text": {
+                  "value": "have more political"
+                },
+                "color": {"value": "black"}
+              }
+            },
+            {
+              "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": -10,
+                "dy": -170,
+                "fontSize": 15,
+                "font":"Calibri"
+              },
+              "encoding": {
+                "text": {
+                  "value": "awareness than others"
+                },
+                "color": {"value": "black"}
+              }
+            }
+          ]
         }
       ]
     }

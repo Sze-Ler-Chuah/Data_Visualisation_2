@@ -1,10 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "width": 500,
-  "height": 500,
+  "height": 600,
   "padding": {"left": -150, "right": 10, "top": -100, "bottom": 10},  
   "signals": [
-    {"name": "radius", "update": "width / 2.5"}
+    {"name": "radius", "update": "width / 2.25"}
   ],
   "data": [
     {
@@ -135,6 +135,7 @@
           "type": "symbol",
           "name": "category-point-GE14",
           "from": {"data": "GE14"},
+          "zindex": 1,
           "encode": {
             "enter": {
               "x": {"signal": "scale('radial', datum.AMOUNT) * cos(scale('angular', datum.WAY_COUNT))"},
@@ -151,6 +152,7 @@
           "type": "symbol",
           "name": "category-point-GE15",
           "from": {"data": "GE15"},
+          "zindex": 1,
           "encode": {
             "enter": {
               "x": {"signal": "scale('radial', datum.AMOUNT) * cos(scale('angular', datum.WAY_COUNT))"},
@@ -191,7 +193,7 @@
       "type": "text",
       "name": "key-label",
       "from": {"data": "keys"},
-      "zindex": 1,
+      "zindex": 10,
       "encode": {
         "enter": {
           "x": {"signal": "(radius + 40) * cos(scale('angular', datum.WAY_COUNT))"},
@@ -267,8 +269,8 @@
       "from": {"data": "radial-grid"},
       "encode": {
         "enter": {
-          "x": {"signal": "radius-180"},
-          "y": {"value": 195},
+          "x": {"signal": "radius-195"},
+          "y": {"value": 215},
           "text": {"value": "150"},
           "baseline": {"value": "middle"},
           "fill": {"value": "black"},
@@ -282,8 +284,8 @@
       "from": {"data": "radial-grid"},
       "encode": {
         "enter": {
-          "x": {"signal": "(radius * 0.75)-145"},
-          "y": {"value": 145},
+          "x": {"signal": "(radius * 0.75)-155"},
+          "y": {"value": 160},
           "text": {"value": "112.5"},
           "baseline": {"value": "middle"},
           "fill": {"value": "black"},
@@ -297,8 +299,8 @@
       "from": {"data": "radial-grid"},
       "encode": {
         "enter": {
-          "x": {"signal": "(radius * 0.5)-90"},
-          "y": {"value": 95},
+          "x": {"signal": "(radius * 0.5)-100"},
+          "y": {"value": 110},
           "text": {"value": "75"},
           "baseline": {"value": "middle"},
           "fill": {"value": "black"},
@@ -312,8 +314,8 @@
       "from": {"data": "radial-grid"},
       "encode": {
         "enter": {
-          "x": {"signal": "(radius * 0.25)-55"},
-          "y": {"value": 45},
+          "x": {"signal": "(radius * 0.25)-60"},
+          "y": {"value": 50},
           "text": {"value": "37.5"},
           "baseline": {"value": "middle"},
           "fill": {"value": "black"},

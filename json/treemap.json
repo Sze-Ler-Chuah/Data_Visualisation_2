@@ -1,11 +1,12 @@
 {
     "$schema": "https://vega.github.io/schema/vega/v5.json",
     "description": "An example of treemap layout for hierarchical data.",
-    "width": 800,
-    "height": 600,
+    "width": 620,
+    "height": 550,
     "signals": [
       {
-        "name": "layout", "value": "squarify",
+        "name": "layout", 
+        "value": "squarify",
         "bind": {
           "input": "select",
           "options": [
@@ -16,8 +17,14 @@
         }
       },
       {
-        "name": "Ratio", "value": 1.6,
+        "name": "Ratio", 
+        "value": 2,
         "bind": {"input": "range", "min": 1, "max": 5, "step": 0.1}
+      },
+      {
+        "name": "minElectors", 
+        "value": 0,
+        "bind": {"input": "range", "min": 0, "max": 2400000, "step": 20000, "name": "Minimum Number of Electors:"}
       }
     ],
   
@@ -50,7 +57,16 @@
       {
         "name": "leaves",
         "source": "tree",
-        "transform": [{ "type": "filter", "expr": "!datum.children" }]
+        "transform": [
+          { "type": "filter", "expr": "!datum.children" },
+          { "type": "filter", "expr": "datum.size >= minElectors" }
+        ]
+      },
+      {
+        "name": "annotation1",
+        "values": [
+          {"x": -5, "y": 200, "text": "Introduction of Undi-18"}
+        ]
       }
     ],
   
@@ -58,7 +74,7 @@
         {
             "name": "color",
             "type": "linear",
-            "domain": {"data": "leaves", "field": "size"},
+            "domain": [0,2345000],
             "range": ["#3795BD", "#ffffbf", "#EE66A6"]
         }
     ],
@@ -66,11 +82,14 @@
         {
             "fill": "color",
             "title": "Number of Electors",
-            "titleFontSize": 12,
-            "orient": "right",
-            "padding": 10,
-            "gradientLength": {"signal": "height - 27"},
-            "offset": 0       
+            "titleFontSize": 14,
+            "titleAnchor": "middle",
+            "orient": "bottom",
+            "padding": 5,
+            "direction": "horizontal",
+            "gradientLength": {"signal": "height + 65"},
+            "offset": 0,
+            "tickCount": 5       
         }
     ],
     "marks": [
@@ -133,6 +152,149 @@
             "y": {"signal": "0.5 * (datum.y0 + datum.y1)"},
             "text": {"signal": "datum.id"},
             "fillOpacity": {"signal": "(datum.x1 - datum.x0) > 50 && (datum.y1 - datum.y0) > 20 ? 1 : 0"}
+          }
+        }
+      },
+      {
+        "type": "text",
+        "encode": {
+          "enter": {
+            "x": {"value": 10},
+            "y": {"value": 240},
+            "text": {"value": "Introduction"},
+            "font": {"value": "Calibri"},
+            "fontSize": {"value": 13},
+            "fill": {"value": "black"}
+          }
+        }
+      },
+      {
+        "type": "text",
+        "encode": {
+          "enter": {
+            "x": {"value": 10},
+            "y": {"value": 252},
+            "text": {"value": "of Undi-18"},
+            "font": {"value": "Calibri"},
+            "fontSize": {"value": 13},
+            "fill": {"value": "black"}
+          }
+        }
+      },
+      {
+        "type": "text",
+        "encode": {
+          "enter": {
+            "x": {"value": 10},
+            "y": {"value": 515},
+            "text": {"value": "Introduction"},
+            "font": {"value": "Calibri"},
+            "fontSize": {"value": 13},
+            "fill": {"value": "black"}
+          }
+        }
+      },
+      {
+        "type": "text",
+        "encode": {
+          "enter": {
+            "x": {"value": 10},
+            "y": {"value": 527},
+            "text": {"value": "of Undi-18"},
+            "font": {"value": "Calibri"},
+            "fontSize": {"value": 13},
+            "fill": {"value": "black"}
+          }
+        }
+      },
+      {
+        "type": "text",
+        "encode": {
+          "enter": {
+            "x": {"value": 365},
+            "y": {"value": 180},
+            "text": {"value": "Due to higher"},
+            "font": {"value": "Calibri"},
+            "fontSize": {"value": 13},
+            "fill": {"value": "white"}
+          }
+        }
+      },
+      {
+        "type": "text",
+        "encode": {
+          "enter": {
+            "x": {"value": 365},
+            "y": {"value": 192},
+            "text": {"value": "population and"},
+            "font": {"value": "Calibri"},
+            "fontSize": {"value": 13},
+            "fill": {"value": "white"}
+          }
+        }
+      },
+      {
+        "type": "text",
+        "encode": {
+          "enter": {
+            "x": {"value": 365},
+            "y": {"value": 204},
+            "text": {"value": "political awareness"},
+            "font": {"value": "Calibri"},
+            "fontSize": {"value": 13},
+            "fill": {"value": "white"}
+          }
+        }
+      },
+      {
+        "type": "text",
+        "encode": {
+          "enter": {
+            "x": {"value": 365},
+            "y": {"value": 216},
+            "text": {"value": "male aged 21-29 is"},
+            "font": {"value": "Calibri"},
+            "fontSize": {"value": 13},
+            "fill": {"value": "white"}
+          }
+        }
+      },
+      {
+        "type": "text",
+        "encode": {
+          "enter": {
+            "x": {"value": 365},
+            "y": {"value": 228},
+            "text": {"value": "among the groups"},
+            "font": {"value": "Calibri"},
+            "fontSize": {"value": 13},
+            "fill": {"value": "white"}
+          }
+        }
+      },
+      {
+        "type": "text",
+        "encode": {
+          "enter": {
+            "x": {"value": 365},
+            "y": {"value": 240},
+            "text": {"value": "with the highest"},
+            "font": {"value": "Calibri"},
+            "fontSize": {"value": 13},
+            "fill": {"value": "white"}
+          }
+        }
+      },
+      {
+        "type": "text",
+        "encode": {
+          "enter": {
+            "x": {"value": 365},
+            "y": {"value": 252},
+            "text": {"value": "votes"},
+            "font": {"value": "Calibri"},
+            "fontSize": {"value": 13},
+            "fill": {"value": "white"}
           }
         }
       }

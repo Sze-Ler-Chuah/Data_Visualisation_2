@@ -3,12 +3,12 @@
   "title": {
     "text": "Race Distribution for Parliamentary Seats in Malaysia's 14th General Election",
     "font": "Calibri",
-    "fontSize": 30,
+    "fontSize": 40,
     "fontWeight": "bold",
     "color": "black",
     "offset": 50
   },
-  "width": 1200,
+  "width": 1360,
   "height": 600,
   "background": "#F0EBE3",
   "projection": {
@@ -24,6 +24,13 @@
     {
       "data": {"graticule": {"step": [5, 5]}},
       "mark": {"type": "geoshape", "stroke": "black", "strokeWidth": 0.5, "strokeOpacity": 0.5, "fill": "none"}
+    },
+    {
+      "data": {
+        "url": "json/neighbour_country.json",
+        "format": {"type": "topojson", "feature": "custom.geo"}
+      },
+      "mark": {"type": "geoshape", "fill": "#d3d3d3", "stroke": "white", "strokeWidth": 0.5}
     },
     {
       "transform": [
@@ -96,7 +103,7 @@
             "orient": "bottom",
             "titleFontSize": 20,
             "titlePadding": 10,
-            "labelFontSize": 15,
+            "labelFontSize": 16,
             "columns": 7,
             "labelLimit": 300,
             "titleLimit": 400
@@ -111,6 +118,50 @@
           "value": 0.2
         }
       }
+    },
+    {
+      "transform": [
+        {
+          "aggregate": [
+            {"op": "min", "field": "Malay", "as": "minMalay"}
+          ]
+        }
+      ],
+      "layer": [
+        {
+          "mark": {"type": "rule", "color": "#7D7C7C", "strokeWidth":2},
+          "encoding": {
+            "x": {"datum": 15, "type": "quantitative", "scale": {"domain": [0, 20]}},
+            "x2": {"datum": 14.3, "type": "quantitative"},
+            "y": {"datum": 13.5, "type": "quantitative","scale": {"domain": [0, 20]}},
+            "y2": {"datum": 15, "type": "quantitative"}
+          }
+        },
+        {
+          "mark": {"type": "text", "align": "left", "fontSize": 15, "color": "black"},
+          "encoding": {
+            "x": {"datum": 8, "type": "quantitative"},
+            "y": {"datum": 16, "type": "quantitative"},
+            "text": {"value": "As a federal territory with a significant number of civil servants,"}
+          }
+        },
+        {
+          "mark": {"type": "text", "align": "left", "fontSize": 15, "color": "black"},
+          "encoding": {
+            "x": {"datum": 8, "type": "quantitative"},
+            "y": {"datum": 15.5, "type": "quantitative"},
+            "text": {"value": "the majority of whom are Malay, Labuan has a higher percentage"}
+          }
+        },
+        {
+          "mark": {"type": "text", "align": "left", "fontSize": 15, "color": "black"},
+          "encoding": {
+            "x": {"datum": 8, "type": "quantitative"},
+            "y": {"datum": 15, "type": "quantitative"},
+            "text": {"value": "of Malay voters in GE14."}
+          }
+        }
+      ]
     }
   ],
   "config": {}

@@ -4,13 +4,13 @@
   {
     "text": "Election Results in Malaysia’s 15th General Election",
     "font": "Calibri",
-    "fontSize": 30,
+    "fontSize": 40,
     "fontWeight": "bold",
     "color": "black",
     "offset": 50
   },
   "background": "#f0ece3",
-  "width": 1200,
+  "width": 1360,
   "height": 600,
   "projection": {"type": "mercator", "scale" : 3400, "center": [109.5, 3.5]},
   "data": {
@@ -21,6 +21,13 @@
     {
       "data" : {"graticule": {"step": [5, 5]}},
       "mark": {"type": "geoshape", "stroke": "black", "strokeWidth": 0.5, "strokeOpacity": 0.5, "fill": "none"} 
+    },
+    {
+      "data": {
+        "url": "json/neighbour_country.json",
+        "format": {"type": "topojson", "feature": "custom.geo"}
+      },
+      "mark": {"type": "geoshape", "fill": "#d3d3d3", "stroke": "white", "strokeWidth": 0.5}
     },
     {
       "transform": [
@@ -49,7 +56,12 @@
         "partyFilter": {
           "type": "multi",
           "fields": ["WINNING PARTY"],
-          "bind": "legend"
+          "bind": "legend",
+          "init": [
+            {"WINNING PARTY": "Barisan Nasional (BN)"},
+            {"WINNING PARTY": "Pakatan Harapan (PH)"},
+            {"WINNING PARTY": "Gabungan Parti Sarawak (GPS)"}
+          ]
         }
       },
       "mark": {"type": "geoshape", "stroke": "#3c3d37"},
@@ -66,9 +78,9 @@
             "titleFontSize": 20,
             "titlePadding": 10,
             "orient": "bottom",
-            "labelFontSize": 15,
+            "labelFontSize": 16,
             "columns": 5,
-            "labelLimit": 280
+            "labelLimit": 350
           }
         },
         "tooltip": [
@@ -80,6 +92,50 @@
           "value": 0.2
         }
       }
+    },
+    {
+      "transform": [
+        {
+          "aggregate": [
+            {"op": "count", "as": "count"}
+          ]
+        }
+      ],
+      "layer": [
+        {
+          "mark": {"type": "rule", "color": "#7D7C7C"},
+          "encoding": {
+            "x": {"datum": 14, "type": "quantitative", "scale": {"domain": [0, 20]}, "axis":null},
+            "x2": {"datum": 13, "type": "quantitative"},
+            "y": {"datum": 8, "type": "quantitative","scale": {"domain": [0, 20]}, "axis":null},
+            "y2": {"datum": 11.5, "type": "quantitative"}
+          }
+        },
+        {
+          "mark": {"type": "text", "align": "left", "fontSize": 15, "color": "black"},
+          "encoding": {
+            "x": {"datum": 7.5, "type": "quantitative"},
+            "y": {"datum": 13, "type": "quantitative"},
+            "text": {"value": "GPS has been to join the coalition government"}
+          }
+        },
+        {
+          "mark": {"type": "text", "align": "left", "fontSize": 15, "color": "black"},
+          "encoding": {
+            "x": {"datum": 7.5, "type": "quantitative"},
+            "y": {"datum": 12.5, "type": "quantitative"},
+            "text": {"value": "after BN and PH secure only 111 seats, falling short "}
+          }
+        },
+        {
+          "mark": {"type": "text", "align": "left", "fontSize": 15, "color": "black"},
+          "encoding": {
+            "x": {"datum": 7.5, "type": "quantitative"},
+            "y": {"datum": 12, "type": "quantitative"},
+            "text": {"value": "of 112 seats required to form a simple majority government."}
+          }
+        }
+      ]
     }
   ],
   

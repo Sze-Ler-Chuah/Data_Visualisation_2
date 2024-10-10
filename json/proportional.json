@@ -4,12 +4,12 @@
     "url": "data/GE15_Absent_Impact.csv",
     "format": {"type": "csv"}
   },
-  "width": 600,
+  "width": 650,
   "height": 500,
   "background": "#f0ece3",
   "transform": [
     {
-      "calculate": "parseFloat(datum['Seats Won'])", "as": "Win"
+      "calculate": "parseFloat(datum['Seats Won'])", "as": "Won Seats"
     },
     {
       "calculate": "parseFloat(datum['Second Place (Absent Vote > Winning Majority)'])", "as": "Second Place (Absent Vote > Winning Majority)"
@@ -18,7 +18,7 @@
       "calculate": "parseFloat(datum['Potential Winning Seats'])", "as": "Potential Winning Seats"
     },
     {
-      "fold": ["Win", "Second Place (Absent Vote > Winning Majority)", "Potential Winning Seats"],
+      "fold": ["Won Seats", "Second Place (Absent Vote > Winning Majority)", "Potential Winning Seats"],
       "as": ["Category", "Value"]
     },
     {
@@ -68,27 +68,27 @@
           "legend": {
             "title": "Party",
             "orient": "right",
+            "direction": "vertical",
             "labelFontSize": 14,
-            "titleFontSize": 16,
-            "offset": -50
+            "titleFontSize": 18,
+            "offset": -80,
+            "symbolSize": 500
           }
         },
         "opacity": {
           "condition": {"selection": "partyFilter", "value": 1},
-          "value": 0.3
+          "value": 0.1
         },
         "strokeWidth": {
-          "condition": [
-            {"test": "datum.PARTY === 'PH'", "value": 4}
-          ],
-          "value": 1
+          "condition": {"selection": "partyFilter", "value": 5},
+          "value": 2
         },
         "detail": {"type": "nominal", "field": "Index"},
         "x": {
           "type": "nominal",
           "field": "Category",
           "scale": {
-            "domain": ["Win", "Second Place (Absent Vote > Winning Majority)", "Potential Winning Seats"]
+            "domain": ["Won Seats", "Second Place (Absent Vote > Winning Majority)", "Potential Winning Seats"]
           }
         },
         "y": {
@@ -97,8 +97,9 @@
           "axis": null
         },
         "tooltip": [
-          {"type": "quantitative", "field": "Win"},
-          {"type": "quantitative", "field": "Second Place (Absent Vote > Winning Majority)"},
+          {"type": "nominal", "field": "PARTY", "title": "Party"},
+          {"type": "quantitative", "field": "Won Seats"},
+          {"type": "quantitative", "field": "Second Place (Absent Vote > Winning Majority)", "title": "Second Place"},
           {"type": "quantitative", "field": "Potential Winning Seats"}
         ]
       }
@@ -167,7 +168,7 @@
           "type": "nominal",
           "field": "Category",
           "scale": {
-            "domain": ["Win", "Second Place (Absent Vote > Winning Majority)", "Potential Winning Seats"]
+            "domain": ["Won Seats", "Second Place (Absent Vote > Winning Majority)", "Potential Winning Seats"]
           }
         },
         "y": {
@@ -185,9 +186,9 @@
     "axisX": {
       "domain": false, 
       "labelAngle":0, 
-      "tickColor": "#ccc", 
+      "tickColor": "#000", 
       "title": null,
-      "labelFontSize": 12,
+      "labelFontSize": 13,
       "labelLimit": 300
     },
     "view": {"stroke": null},

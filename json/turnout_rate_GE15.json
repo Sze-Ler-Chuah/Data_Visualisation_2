@@ -3,12 +3,12 @@
   "title": {
     "text": "Turnout Rate for Malaysia’s 15th General Election",
     "font": "Calibri",
-    "fontSize": 28,
+    "fontSize": 40,
     "fontWeight": "bold",
     "color": "black",
     "offset": 50
   },
-  "width": 1200,
+  "width": 1360,
   "height": 600,
   "background": "#F0EBE3",
   "projection": {"type": "mercator", "scale": 3400, "center": [109.5, 3.5]},
@@ -45,6 +45,13 @@
     {
       "data": {"graticule": {"step": [5, 5]}},
       "mark": {"type": "geoshape", "stroke": "black", "strokeWidth": 0.5, "strokeOpacity": 0.5, "fill": "none"}
+    },
+    {
+      "data": {
+        "url": "json/neighbour_country.json",
+        "format": {"type": "topojson", "feature": "custom.geo"}
+      },
+      "mark": {"type": "geoshape", "fill": "#d3d3d3", "stroke": "white", "strokeWidth": 0.5}
     },
     {
       "transform": [
@@ -116,106 +123,75 @@
       "transform": [
         {
           "aggregate": [
-            {"op": "min", "field": "TURNOUT", "as": "minTurnout"},
-            {"op": "max", "field": "TURNOUT", "as": "maxTurnout"}
+            {"op": "min", "field": "TURNOUT", "as": "minTurnout"}
           ]
-        },
-        {
-          "lookup": "minTurnout",
-          "from": {
-            "data": {
-              "url": "data/GE15_Parliament_Elections.csv"
-            },
-            "key": "TURNOUT",
-            "fields": ["PARLIAMENTARY NAME", "PARLIAMENTARY CODE", "LATITUDE", "LONGITUDE"]
-          },
-          "as": ["minParliamentaryName", "minParliamentaryCode", "minLatitude", "minLongitude"]
-        },
-        {
-          "lookup": "maxTurnout",
-          "from": {
-            "data": {
-              "url": "data/GE15_Parliament_Elections.csv"
-            },
-            "key": "TURNOUT",
-            "fields": ["PARLIAMENTARY NAME", "PARLIAMENTARY CODE", "LATITUDE", "LONGITUDE"]
-          },
-          "as": ["maxParliamentaryName", "maxParliamentaryCode", "maxLatitude", "maxLongitude"]
-        },
-        {
-          "calculate": "datum.minLongitude + 2", 
-          "as": "adjustedMinLongitude"
-        },
-        {
-          "calculate": "datum.minLatitude - 3.5", 
-          "as": "adjustedMinLatitude"
-        },
-        {
-          "calculate": "datum.maxLatitude - 2.4", 
-          "as": "adjustedMaxLatitude"
-        },
-        {
-          "calculate": "datum.minParliamentaryName + ' is the parliamentary seat with the lowest turnout rate which is 47.93%' ",
-          "as": "minAnnotation"
-        },
-        {
-          "calculate": "datum.maxParliamentaryName + ' has one of the lowest number of voters and voters are usually civil servants,' + '\\u000A' + 'resulting in high turnout rate'",
-          "as": "maxAnnotation"
         }
       ],
       "layer": [
         {
-          "mark": {
-            "type": "rule",
-            "color": "red",
-            "strokeWidth": 1.5
-          },
+          "mark": {"type": "rule", "color": "#7D7C7C", "strokeWidth":2},
           "encoding": {
-            "longitude": {"field": "minLongitude", "type": "quantitative"},
-            "latitude": {"field": "minLatitude", "type": "quantitative"},
-            "longitude2": {"field": "adjustedMinLongitude", "type": "quantitative"},
-            "latitude2": {"field": "adjustedMinLatitude", "type": "quantitative"}
+            "x": {"datum": 3.5, "type": "quantitative", "scale": {"domain": [0, 20]}, "axis":null},
+            "x2": {"datum": 3.2, "type": "quantitative"},
+            "y": {"datum": 5.5, "type": "quantitative","scale": {"domain": [0, 20]}, "axis":null},
+            "y2": {"datum": 8.75, "type": "quantitative"}
           }
         },
         {
-          "mark": {
-            "type": "text",
-            "fontSize": 15,
-            "color": "black",
-            "dx": 0,
-            "dy": 225
-          },
+          "mark": {"type": "text", "align": "left", "fontSize": 15, "color": "black"},
           "encoding": {
-            "text": {"field": "minAnnotation", "type": "nominal"},
-            "longitude": {"field": "minLongitude", "type": "quantitative"},
-            "latitude": {"field": "minLatitude", "type": "quantitative"}
+            "x": {"datum": 1.5, "type": "quantitative"},
+            "y": {"datum": 5, "type": "quantitative"},
+            "text": {"value": "Putrajaya has one of the lowest number of electors,"}
           }
         },
         {
-          "mark": {
-            "type": "rule",
-            "color": "green",
-            "strokeWidth": 1.5
-          },
+          "mark": {"type": "text", "align": "left", "fontSize": 15, "color": "black"},
           "encoding": {
-            "longitude": {"field": "maxLongitude", "type": "quantitative"},
-            "latitude": {"field": "maxLatitude", "type": "quantitative"},
-            "longitude2": {"field": "maxLongitude", "type": "quantitative"},
-            "latitude2": {"field": "adjustedMaxLatitude", "type": "quantitative"}
+            "x": {"datum": 1.5, "type": "quantitative"},
+            "y": {"datum": 4.5, "type": "quantitative"},
+            "text": {"value": "with most being civil servants, who tend to be more"}
           }
         },
         {
-          "mark": {
-            "type": "text",
-            "fontSize": 15,
-            "color": "black",
-            "dx": 150,
-            "dy": 150
-          },
+          "mark": {"type": "text", "align": "left", "fontSize": 15, "color": "black"},
           "encoding": {
-            "text": {"field": "maxAnnotation", "type": "nominal"},
-            "longitude": {"field": "maxLongitude", "type": "quantitative"},
-            "latitude": {"field": "maxLatitude", "type": "quantitative"}
+            "x": {"datum": 1.5, "type": "quantitative"},
+            "y": {"datum": 4, "type": "quantitative"},
+            "text": {"value": "politically engaged. This results in a high voter turnout rate. "}
+          }
+        },
+        {
+          "mark": {"type": "rule", "color": "#7D7C7C", "strokeWidth":2},
+          "encoding": {
+            "x": {"datum": 14.8, "type": "quantitative", "scale": {"domain": [0, 20]}},
+            "x2": {"datum": 13.8, "type": "quantitative"},
+            "y": {"datum": 11.5, "type": "quantitative","scale": {"domain": [0, 20]}},
+            "y2": {"datum": 13.5, "type": "quantitative"}
+          }
+        },
+        {
+          "mark": {"type": "text", "align": "left", "fontSize": 15, "color": "black"},
+          "encoding": {
+            "x": {"datum": 9, "type": "quantitative"},
+            "y": {"datum": 15, "type": "quantitative"},
+            "text": {"value": "Due to limited access to political information and"}
+          }
+        },
+        {
+          "mark": {"type": "text", "align": "left", "fontSize": 15, "color": "black"},
+          "encoding": {
+            "x": {"datum": 9, "type": "quantitative"},
+            "y": {"datum": 14.5, "type": "quantitative"},
+            "text": {"value": "geographical challenges, Limbang turns out to be"}
+          }
+        },
+        {
+          "mark": {"type": "text", "align": "left", "fontSize": 15, "color": "black"},
+          "encoding": {
+            "x": {"datum": 9, "type": "quantitative"},
+            "y": {"datum": 14, "type": "quantitative"},
+            "text": {"value": "one of the seats with lowest voter turnout rate."}
           }
         }
       ]
