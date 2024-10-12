@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 650,
+  "width": 580,
   "height": 500,
-  "background": "#f0ece3",
+  "background": null,
   "data": {
     "values": [
       {"Elections": "GE14", "Total Registered Voters": 14946024, "Total Ballots": 12300067, "Total Absent": 2645957},
@@ -47,7 +47,8 @@
           "field": "Start Voters Corrected",
           "type": "quantitative",
           "title": "Total Voters",
-          "axis": {"labelAngle": 0},
+          "axis": {"labelAngle": 0,
+        "tickCount": 5},
           "scale": {"domain": [0, 36119662]}
         },
         "x2": {
@@ -63,8 +64,8 @@
           "field": "Category",
           "type": "nominal",
           "title": "Category",
-          "scale": {"range": ["#EB5353", "#6BCB77"]},
-          "legend": {"title": "Vote Breakdown", "orient": "bottom"}
+          "scale": {"range": ["#CDC1FF", "#A594F9"]},
+          "legend": {"title": "Vote Breakdown", "orient": "top"}
         },
         "tooltip": [
           {"field": "Elections", "type": "nominal"},
@@ -119,11 +120,11 @@
       "domainColor":"black",
       "labelFontSize":12,
       "titleFontSize":14,
-      "titlePadding":20
+      "titlePadding":20    
     },
     "legend": {
-      "labelFontSize": 12,
-      "titleFontSize": 14,
+      "labelFontSize": 14,
+      "titleFontSize": 16,
       "labelFont": "Calibri",
       "titleFont": "Calibri",
       "labelFontWeight": "bold",

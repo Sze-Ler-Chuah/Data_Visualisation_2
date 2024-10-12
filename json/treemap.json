@@ -1,26 +1,9 @@
 {
     "$schema": "https://vega.github.io/schema/vega/v5.json",
     "description": "An example of treemap layout for hierarchical data.",
-    "width": 620,
+    "width": 590,
     "height": 550,
     "signals": [
-      {
-        "name": "layout", 
-        "value": "squarify",
-        "bind": {
-          "input": "select",
-          "options": [
-            "squarify",
-            "binary",
-            "slicedice"
-          ]
-        }
-      },
-      {
-        "name": "Ratio", 
-        "value": 2,
-        "bind": {"input": "range", "min": 1, "max": 5, "step": 0.1}
-      },
       {
         "name": "minElectors", 
         "value": 0,
@@ -43,8 +26,8 @@
             "field": "size",
             "sort": {"field": "value"},
             "round": true,
-            "method": {"signal": "layout"},
-            "ratio": {"signal": "Ratio"},
+            "method": "squarify",
+            "ratio": 2,
             "size": [{"signal": "width"}, {"signal": "height"}]
           }
         ]
@@ -75,7 +58,7 @@
             "name": "color",
             "type": "linear",
             "domain": [0,2345000],
-            "range": ["#3795BD", "#ffffbf", "#EE66A6"]
+            "range": ["#ffffbf", "#EE66A6"]
         }
     ],
     "legends": [
@@ -87,7 +70,7 @@
             "orient": "bottom",
             "padding": 5,
             "direction": "horizontal",
-            "gradientLength": {"signal": "height + 65"},
+            "gradientLength": {"signal": "height + 35"},
             "offset": 0,
             "tickCount": 5       
         }
@@ -211,7 +194,7 @@
         "type": "text",
         "encode": {
           "enter": {
-            "x": {"value": 365},
+            "x": {"value": 345},
             "y": {"value": 180},
             "text": {"value": "Due to higher"},
             "font": {"value": "Calibri"},
@@ -224,7 +207,7 @@
         "type": "text",
         "encode": {
           "enter": {
-            "x": {"value": 365},
+            "x": {"value": 345},
             "y": {"value": 192},
             "text": {"value": "population and"},
             "font": {"value": "Calibri"},
@@ -237,7 +220,7 @@
         "type": "text",
         "encode": {
           "enter": {
-            "x": {"value": 365},
+            "x": {"value": 345},
             "y": {"value": 204},
             "text": {"value": "political awareness"},
             "font": {"value": "Calibri"},
@@ -250,7 +233,7 @@
         "type": "text",
         "encode": {
           "enter": {
-            "x": {"value": 365},
+            "x": {"value": 345},
             "y": {"value": 216},
             "text": {"value": "male aged 21-29 is"},
             "font": {"value": "Calibri"},
@@ -263,7 +246,7 @@
         "type": "text",
         "encode": {
           "enter": {
-            "x": {"value": 365},
+            "x": {"value": 345},
             "y": {"value": 228},
             "text": {"value": "among the groups"},
             "font": {"value": "Calibri"},
@@ -276,7 +259,7 @@
         "type": "text",
         "encode": {
           "enter": {
-            "x": {"value": 365},
+            "x": {"value": 345},
             "y": {"value": 240},
             "text": {"value": "with the highest"},
             "font": {"value": "Calibri"},
@@ -289,7 +272,7 @@
         "type": "text",
         "encode": {
           "enter": {
-            "x": {"value": 365},
+            "x": {"value": 345},
             "y": {"value": 252},
             "text": {"value": "votes"},
             "font": {"value": "Calibri"},

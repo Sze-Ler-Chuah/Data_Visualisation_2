@@ -3,21 +3,25 @@
   "title": 
   {
     "text": "Election Results in Malaysia’s 15th General Election",
-    "font": "Calibri",
+    "font": "Tahoma",
     "fontSize": 40,
     "fontWeight": "bold",
     "color": "black",
     "offset": 50
   },
   "background": "#f0ece3",
-  "width": 1360,
-  "height": 600,
+  "width": 1250,
+  "height": 500,
   "projection": {"type": "mercator", "scale" : 3400, "center": [109.5, 3.5]},
   "data": {
     "url": "./json/malaysia.state.json",
     "format": {"type": "topojson", "feature": "malaysia.state"}
   },
   "layer": [
+    {
+      "data" : {"sphere": true},
+      "mark" : {"type": "geoshape", "fill": "#afd7f0"}
+    },
     {
       "data" : {"graticule": {"step": [5, 5]}},
       "mark": {"type": "geoshape", "stroke": "black", "strokeWidth": 0.5, "strokeOpacity": 0.5, "fill": "none"} 
@@ -71,14 +75,14 @@
           "type": "nominal",
           "scale": {
             "domain": ["Barisan Nasional (BN)", "Pakatan Harapan (PH)", "Perikatan Nasional (PN)", "Gabungan Parti Sarawak (GPS)", "Gabungan Rakyat Sabah (GRS)", "Parti Bangsa Malaysia (PBM)","Parti Kesejahteraan Demokratik Masyarakat (KDM)", "Warisan", "Muda", "Independent"],
-            "range": ["#0169ba", "#f6441e","#9944b9","#e6a700","#54b3e3","#008c51","#f39c60","#ea7dcd","#950300","#645665"]
+            "range": ["#0169ba", "#f6441e","#9944b9","#e6a700","#54b3e3","#B17457","#f39c60","#ea7dcd","#950300","#645665"]
           },
           "legend": {
             "title": "Party",
             "titleFontSize": 20,
             "titlePadding": 10,
             "orient": "bottom",
-            "labelFontSize": 16,
+            "labelFontSize": 12,
             "columns": 5,
             "labelLimit": 350
           }
@@ -108,31 +112,31 @@
             "x": {"datum": 14, "type": "quantitative", "scale": {"domain": [0, 20]}, "axis":null},
             "x2": {"datum": 13, "type": "quantitative"},
             "y": {"datum": 8, "type": "quantitative","scale": {"domain": [0, 20]}, "axis":null},
-            "y2": {"datum": 11.5, "type": "quantitative"}
+            "y2": {"datum": 11.8, "type": "quantitative"}
           }
         },
         {
           "mark": {"type": "text", "align": "left", "fontSize": 15, "color": "black"},
           "encoding": {
             "x": {"datum": 7.5, "type": "quantitative"},
-            "y": {"datum": 13, "type": "quantitative"},
-            "text": {"value": "GPS has been to join the coalition government"}
+            "y": {"datum": 13.2, "type": "quantitative"},
+            "text": {"value": "GPS had been convined to join the coalition government"}
           }
         },
         {
           "mark": {"type": "text", "align": "left", "fontSize": 15, "color": "black"},
           "encoding": {
             "x": {"datum": 7.5, "type": "quantitative"},
-            "y": {"datum": 12.5, "type": "quantitative"},
-            "text": {"value": "after BN and PH secure only 111 seats, falling short "}
+            "y": {"datum": 12.7, "type": "quantitative"},
+            "text": {"value": "after BN and PH secured only 111 seats, falling short of"}
           }
         },
         {
           "mark": {"type": "text", "align": "left", "fontSize": 15, "color": "black"},
           "encoding": {
             "x": {"datum": 7.5, "type": "quantitative"},
-            "y": {"datum": 12, "type": "quantitative"},
-            "text": {"value": "of 112 seats required to form a simple majority government."}
+            "y": {"datum": 12.2, "type": "quantitative"},
+            "text": {"value": "112 seats required to form a simple majority government."}
           }
         }
       ]

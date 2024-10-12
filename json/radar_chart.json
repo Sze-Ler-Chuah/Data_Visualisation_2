@@ -1,10 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "width": 500,
+  "width": 600,
   "height": 600,
   "padding": {"left": -150, "right": 10, "top": -100, "bottom": 10},  
   "signals": [
-    {"name": "radius", "update": "width / 2.25"}
+    {"name": "radius", "update": "width / 2.23"}
   ],
   "data": [
     {
@@ -71,34 +71,7 @@
       "name": "color",
       "type": "ordinal",
       "domain": ["GE14", "GE15"],
-      "range": ["#7E60BF", "#295F98"]
-    }
-  ],
-  "legends": [
-    {
-      "fill": "color",
-      "title": "Election", 
-      "orient": "top-left",
-      "offset": -250,
-      "encode": {
-        "symbols": {
-          "update": {
-            "shape": {"value": "circle"},
-            "size": {"value": 100}
-          }
-        },
-        "title": {
-          "update": {
-            "fontSize": {"value": 20},
-            "fontWeight": {"value": "bold"}
-          }
-        },
-        "labels": {
-          "update": {
-            "fontSize": {"value": 12}
-          }
-        }
-      }
+      "range": ["#CD5C08", "#295F98"]
     }
   ],
   "encode": {
@@ -141,7 +114,7 @@
               "x": {"signal": "scale('radial', datum.AMOUNT) * cos(scale('angular', datum.WAY_COUNT))"},
               "y": {"signal": "scale('radial', datum.AMOUNT) * sin(scale('angular', datum.WAY_COUNT))"},
               "size": {"value": 50},
-              "fill": {"value": "#7E60BF"},
+              "fill": {"value": "#CD5C08"},
               "tooltip": {
                 "signal": "{Election: datum.ELECTION, Way: datum.WAY_COUNT, Amount: datum.AMOUNT}"
               }
@@ -317,6 +290,85 @@
           "x": {"signal": "(radius * 0.25)-60"},
           "y": {"value": 50},
           "text": {"value": "37.5"},
+          "baseline": {"value": "middle"},
+          "fill": {"value": "black"},
+          "fontSize": {"value": 15}
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "name": "annotation-line-1",
+      "encode": {
+        "enter": {
+          "x": {"value": -20},
+          "x2": {"value": -50},
+          "y": {"value": -9.5},
+          "y2": {"value": 30},
+          "stroke": {"value": "black"},
+          "strokeWidth": {"value": 1}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x": {"value": -170},
+          "y": {"value": 45},
+          "text": {"value": "GE14 had yet to see"},
+          "baseline": {"value": "middle"},
+          "fill": {"value": "black"},
+          "fontSize": {"value": 15}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x": {"value": -170},
+          "y": {"value": 60},
+          "text": {"value": "the emergence of"},
+          "baseline": {"value": "middle"},
+          "fill": {"value": "black"},
+          "fontSize": {"value": 15}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x": {"value": -170},
+          "y": {"value": 75},
+          "text": {"value": "any new parties and"},
+          "baseline": {"value": "middle"},
+          "fill": {"value": "black"},
+          "fontSize": {"value": 15}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x": {"value": -170},
+          "y": {"value": 90},
+          "text": {"value": "the focus was on"},
+          "baseline": {"value": "middle"},
+          "fill": {"value": "black"},
+          "fontSize": {"value": 15}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x": {"value": -170},
+          "y": {"value": 105},
+          "text": {"value": "PH, BN and PAS"},
           "baseline": {"value": "middle"},
           "fill": {"value": "black"},
           "fontSize": {"value": 15}

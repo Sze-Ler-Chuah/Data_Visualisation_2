@@ -2,14 +2,14 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Election Results in Malaysia’s 14th General Election",
-    "font": "Calibri",
+    "font": "Tahoma",
     "fontSize": 40,
     "fontWeight": "bold",
     "color": "black",
     "offset": 50
   },
-  "width": 1360,
-  "height": 600,
+  "width": 1250,
+  "height": 500,
   "background": "#f0ece3",
   "projection": {"type": "mercator", "scale": 3400, "center": [109.5, 3.5]},
   "data": {
@@ -17,6 +17,10 @@
     "format": {"type": "topojson", "feature": "malaysia.state"}
   },
   "layer": [
+    {
+      "data" : {"sphere": true},
+      "mark" : {"type": "geoshape", "fill": "#afd7f0"}
+    },
     {
       "data": {"graticule": {"step": [5, 5]}},
       "mark": {"type": "geoshape", "stroke": "black", "strokeWidth": 0.5, "strokeOpacity": 0.5, "fill": "none"}
@@ -61,7 +65,7 @@
           "type": "nominal",
           "scale": {
             "domain": ["Barisan Nasional (BN)", "Pakatan Harapan (PH)", "PAS", "Warisan", "Sabah Star", "Independent"],
-            "range": ["#0169ba", "#f6441e", "#008c51", "#e6a700", "orange", "#645665"]
+            "range": ["#0169ba", "#f6441e", "#9944b9", "#db7dc5", "#59b2da", "#645665"]
           },
           "legend": {
             "title": "Party",
@@ -109,15 +113,15 @@
           "mark": {"type": "text", "align": "left", "fontSize": 15, "color": "black"},
           "encoding": {
             "x": {"datum": 5, "type": "quantitative"},
-            "y": {"datum": 13, "type": "quantitative"},
-            "text": {"value": "PH wins all of these states by a large majority,"}
+            "y": {"datum": 13.2, "type": "quantitative"},
+            "text": {"value": "PH won all of these states by a large majority,"}
           }
         },
         {
           "mark": {"type": "text", "align": "left", "fontSize": 15, "color": "black"},
           "encoding": {
             "x": {"datum": 5, "type": "quantitative"},
-            "y": {"datum": 12.5, "type": "quantitative"},
+            "y": {"datum": 12.7, "type": "quantitative"},
             "text": {"value": "further emphasising that citizens desire a transformation"}
           }
         },
@@ -125,8 +129,8 @@
           "mark": {"type": "text", "align": "left", "fontSize": 15, "color": "black"},
           "encoding": {
             "x": {"datum": 5, "type": "quantitative"},
-            "y": {"datum": 12, "type": "quantitative"},
-            "text": {"value": "in the government during GE14"}
+            "y": {"datum": 12.2, "type": "quantitative"},
+            "text": {"value": "in the government during GE14."}
           }
         }
       ]

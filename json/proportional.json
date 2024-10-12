@@ -4,9 +4,9 @@
     "url": "data/GE15_Absent_Impact.csv",
     "format": {"type": "csv"}
   },
-  "width": 650,
-  "height": 500,
-  "background": "#f0ece3",
+  "width": 700,
+  "height": 550,
+  "background": null,
   "transform": [
     {
       "calculate": "parseFloat(datum['Seats Won'])", "as": "Won Seats"
@@ -63,7 +63,7 @@
           "field": "PARTY",
           "scale": {
             "domain": ["BN", "PH", "PN", "GPS", "GRS", "PBM", "KDM", "Warisan", "Muda", "Independent"],
-            "range": ["#0169ba", "#f6441e","#9944b9","#e6a700","#54b3e3","#008c51","#f39c60","#ea7dcd","#950300","#645665"]
+            "range": ["#0169ba", "#f6441e","#9944b9","#e6a700","#54b3e3","#b07f69","#f39c60","#ea7dcd","#950300","#645665"]
           },
           "legend": {
             "title": "Party",
@@ -158,7 +158,7 @@
     {
       "mark": {
         "type": "text",
-        "color": "#0D7C66",
+        "color": "#aa0081",
         "dx": -15,
         "dy": -5,
         "fontSize": 15
@@ -180,6 +180,168 @@
       "transform": [
         {"filter": "datum.Category === 'Potential Winning Seats'"}
       ]
+    },
+    {
+      "transform": [
+        {
+          "aggregate": [
+            {"op": "min", "field": "Potential Winning Seats", "as": "minPotential Winning Seats"}
+          ]
+        }
+      ],
+      "layer": [
+        {
+          "mark": {
+            "type": "rule",
+            "color": "black",
+            "strokeWidth": 1
+          },
+          "encoding": {
+            "x": {"value": 440},
+            "x2": {"value": 435},
+            "y": {"value": 0},
+            "y2": {"value": 15}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": 30,
+            "dy": -250,
+            "fontSize": 15,
+            "font":"Calibri"
+          },
+          "encoding": {
+            "text": {
+              "value": "With a higher turnout rate,"
+            },
+            "color": {"value": "black"}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": 30,
+            "dy": -235,
+            "fontSize": 15,
+            "font":"Calibri"
+          },
+          "encoding": {
+            "text": {
+              "value": "coalition government is"
+            },
+            "color": {"value": "black"}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": 30,
+            "dy": -220,
+            "fontSize": 15,
+            "font":"Calibri"
+          },
+          "encoding": {
+            "text": {
+              "value": "unnecessary."
+            },
+            "color": {"value": "black"}
+          }
+        },
+        {
+          "mark": {
+            "type": "rule",
+            "color": "black",
+            "strokeWidth": 1
+          },
+          "encoding": {
+            "x": {"value": 400},
+            "x2": {"value": 420},
+            "y": {"value": 90},
+            "y2": {"value": 250}
+          }
+        },
+        {
+          "mark": {
+            "type": "rule",
+            "color": "black",
+            "strokeWidth": 1
+          },
+          "encoding": {
+            "x": {"value": 430},
+            "x2": {"value": 420},
+            "y": {"value": 200},
+            "y2": {"value": 250}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": 30,
+            "dy": 10,
+            "fontSize": 15,
+            "font":"Calibri"
+          },
+          "encoding": {
+            "text": {
+              "value": "Even with a higher turnout"
+            },
+            "color": {"value": "black"}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": 30,
+            "dy": 25,
+            "fontSize": 15,
+            "font":"Calibri"
+          },
+          "encoding": {
+            "text": {
+              "value": "rate, the need to form a"
+            },
+            "color": {"value": "black"}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": 30,
+            "dy": 40,
+            "fontSize": 15,
+            "font":"Calibri"
+          },
+          "encoding": {
+            "text": {
+              "value": "coalition government"
+            },
+            "color": {"value": "black"}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": 30,
+            "dy": 55,
+            "fontSize": 15,
+            "font":"Calibri"
+          },
+          "encoding": {
+            "text": {
+              "value": "reamins unchanged."
+            },
+            "color": {"value": "black"}
+          }
+        }
+      ]
     }
   ],
   "config": {
@@ -193,7 +355,14 @@
     },
     "view": {"stroke": null},
     "style": {
-      "label": {"baseline": "middle", "align": "right", "dx": -5, "dy":-10, "fontSize": 15},
+      "label": {
+        "baseline": "middle", 
+        "align": "right", 
+        "dx": -5, 
+        "dy":-10, 
+        "fontSize": 14,
+        "color": "#5a554f"
+      },
       "tick": {"orient": "horizontal"}
     }
   }

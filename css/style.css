@@ -5,15 +5,15 @@ body {
 }
 
 #dashboard {
-    height: 6000px;
+    height: 5300px;
     background-color: #F0EBE3;
-    width: 100%;
+    width: 90%;
 }
 
 #title {
 	text-align: center;
-	font-size:33.5px;
-    font-family:"Verdana", sans-serif;
+	font-size: 35px;
+    font-family: 'Rockwell', sans-serif;
 }
 
 #title hr {
@@ -23,17 +23,18 @@ body {
 }
 
 #background h2 {
-	font-size: 40px;
-    font-family: "Calibri", sans-serif;
+	font-size: 35px;
+    font-family: "Tahoma", sans-serif;
 	color: #000;
 	text-align: center;
 }
 
 #background p{
 	font-size: 25px;
-    font-style: calibri;
+    font-family: "Calibri", sans-serif;
 	background-color: #F0EBE3;
 	text-align: center;
+    text-justify: inter-word;
 }
 
 #buttons {
@@ -51,6 +52,7 @@ body {
     padding: 15px 32px; /* Padding */
     text-align: center; /* Center text */
     font-size: 20px; /* Font size */
+    font-family: "Tahoma", sans-serif;
 	font-weight: bold;
     margin: 0px 30px; /* Margin */
     cursor: pointer; /* Pointer cursor */
@@ -96,6 +98,7 @@ body {
 
 #switchButtonLabel {
     font-size: 20px; /* Font size */
+    font-family: "Tahoma", sans-serif;
     font-weight: bold; /* Bold text */
     color: #003152; /* Text color */
 }
@@ -103,22 +106,10 @@ body {
 
 #vis {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-left: 38px;
-    margin-top: 40px;
-    margin-bottom: 10px;
-}
-
-#tooltip {
-    position: absolute;
-    background-color: #F0EBE3;
-    border: 1px solid #ccc;
-    padding: 10px;
-    z-index: 1000; /* Increased z-index to ensure it appears on top */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
-    border-radius: 8px; /* Rounded corners */
-    display: none; /* Initially hidden */
+    margin-top: 3%;
 }
 
 #vis-text {
@@ -126,15 +117,28 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 20px;
+    font-family: "Calibri",sans-serif;
+    margin-bottom: -1%;
 }
 
 #vis-text-left, #vis-text-right {
-    padding: 30px;
+    padding: 2%;
+}
+
+#tooltip {
+    position: absolute;
+    background-color: #F0EBE3;
+    border: 1px solid #ccc;
+    padding: 0.5%;
+    z-index: 1000; /* Increased z-index to ensure it appears on top */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+    border-radius: 8px; /* Rounded corners */
+    display: none; /* Initially hidden */
 }
 
 #absent_title{
     font-size: 40px;
-    font-family: "Calibri", sans-serif;
+    font-family: "Tahoma", sans-serif;
     color: #000;
     text-align: center;
 }
@@ -142,27 +146,28 @@ body {
 #absent_chart {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3%;
+    margin-bottom: 5%;
 }
 
-#absent{
-    margin-left: -10px;
+#absent {
+    margin-left: -2.5%;
 }
 
 #absent_text{
-    padding-top: 140px;
-    margin-right: 170px;
+    margin-left: 5%;
+    margin-right: 6%;
     font-size: 20px;
-    font-style: calibri;
+    font-family: "Calibri", sans-serif; 
     color: #000;
+    text-align: justify;
 }
 
 #radar_title{
     font-size: 40px;
-    font-family: "Calibri", sans-serif;
+    font-family: "Tahoma", sans-serif;
     color: #000;
     text-align: center;
 }
@@ -171,103 +176,141 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 50px;
-    margin-bottom: 50px;
-
+    align-items: center;
+    margin-top: -6%;
+    margin-bottom: -2%;
 }
 
 #radar {
-    display: flex;
-    justify-content: center;
-    align-items: center;    
-    margin-top: -100px;
+    margin-left: -5%;
+    margin-top: -5%;
 }
 
-#radar_text{
-    display: flex;
-    justify-content: center;
-    align-items: center;    
+#radar_text{ 
+    margin-top: 6%;
+    margin-left: 4.5%;
+    margin-right: 5%;
     font-size: 20px;
     color: #000;
-    margin-top: -50px;
+    font-family: "Calibri", sans-serif; 
+    text-align: justify;
+    width: 50%;
+
 }
 
 #undi18_title{
     font-size: 40px;
-    font-family: "Calibri", sans-serif;
+    font-family: "Tahoma", sans-serif;
     color: #000;
     text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
 }
 
 #mosaic_chart {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-top: 50px;
+    margin-top: 3%;
     margin-bottom: 50px;
 }
 
 #mosaic {
-    padding-left: 40px;
+    margin-left: 4%;
 }
 
 #mosaic_text {
     font-size: 20px;
-    font-style: calibri;
+    font-family: "Calibri", sans-serif; 
     color: #000;
-    margin-right: 100px;
+    margin-top: 2.5%;
+    margin-left: 3%;
+    margin-right: 5%;
+    text-align: justify;
 }
 
 #two_chart {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 #pop_pyramid {
-    margin-left: 80px;
+    margin-left: 4%;
 }
 
 #treemap {
-    margin-right: 20px;
+    margin-right: 4%;
 }
 
 #two_chart_text{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
-#pop_pyramid_text {
+#pop_pyramid_text, #treemap_text {
     font-size: 20px;
-    font-style: calibri;
+    font-family: "Calibri", sans-serif;
     color: #000;
-    margin-left: 80px;
-    margin-top: -10px;
+    text-align: justify;
+    flex: 1; /* Ensure equal size */
+    margin: 0 10px; /* Add some margin between the paragraphs */
+    padding: 3%; /* Optional: Add padding for better spacing */
+    margin-top: -6%;
 }
 
-#treemap_text {
-    font-size: 20px;
-    font-style: calibri;
-    color: #000;
-    margin-right: 125px;
-    margin-top: -10px;
+#treemap_text{
+    margin-left: -2.5%;
+    margin-top: -13%;
 }
 
 .ge14-text {
-    color: #7E60BF;
+    color: #CD5C08;
     font-weight: bold;
 }
 
 .ge15-text {
-    color:#295F98;
+    color:#285f98;
     font-weight: bold;
+}
+
+.ph-text{
+    color:#f34717;
+    font-weight:bold;
+}
+
+.pn-text{
+    color:#9944b9;
+    font-weight:bold;
+}
+
+.bn-text{
+    color:#0069ba;
+    font-weight:bold;
+}
+
+.malay-text{
+    color:#2179b5;
+    font-weight:bold;
+}
+
+.chinese-text{
+    color:#fa7e13;
+    font-weight:bold;
+}
+
+.bumi-sarawak-text{
+    color:#8c564a;
+    font-weight:bold;
+}
+
+.bumi-sabah-text{
+    color:#9466bd;
+    font-weight:bold;
 }
 
 .male-text{
@@ -281,6 +324,41 @@ body {
 }
 
 .majority-text{
-    color:#0D7C66;
+    color:#aa0081;
     font-weight:bold;
 }
+
+#metadata {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 5px solid #000; /* Add border */
+}
+
+#self_info {
+    margin-left: 4%
+}
+
+#self_info p {
+    font-size: 20px;
+    font-family: "Calibri", sans-serif; 
+    color: #000000; /* White text */
+}
+
+#data_info {
+    margin-right: 4%
+}
+
+#data_info p {
+    font-size: 20px;
+    font-family: "Calibri", sans-serif; 
+    color: #000000; 
+}
+
+#data_info ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Create two columns */
+    font-size: 18px;
+    font-family: "Calibri", sans-serif;
+}
+

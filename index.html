@@ -6,6 +6,10 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.20.8"></script>
 
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.cdnfonts.com/css/bhlingglers" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/marhey" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/adlam-display" rel="stylesheet">
+                
   <title>Data Visualisation 2</title>
 </head>
 <body onload="showTurnout()">
@@ -17,12 +21,12 @@
         <div id="background">
             <h2> Background </h2>
             <p> 
-                Following Barisan Nasional’s historic defeat in the 14th General Election <br>
-                (GE14), many Malaysians anticipated significant changes in the political <br>
-                landscape. However, the Sheraton Move led to the dissolution of the Pakatan <br>
-                Harapan (PH) government. In the 15th General Election (GE15), a coalition <br>
-                government was formed due to hung parliament (No party secure a minimum <br>
-                majority of 112 seats), reshaping the nation’s political dynamics once again.<br>
+                Following Barisan Nasional’s historic defeat in the <span class = 'ge14-text'>14th General Election  <br>
+                (GE14)</span>, many Malaysians anticipated significant changes in the political <br>
+                landscape. However, the <b>Sheraton Move</b> led to the dissolution of the Pakatan <br>
+                Harapan (PH) government. In the <span class='ge15-text'>15th General Election (GE15)</span>, a coalition <br>
+                government was formed due to <b>hung parliament</b> <i>(No party secure a minimum <br>
+                majority of 112 seats)</i>, reshaping the nation’s political dynamics once again.<br>
                 Below, we will study deeply to understand the reason behind hung parliament.
             </p>
         </div>
@@ -48,66 +52,77 @@
                 <div id="absent"></div>
                 <div id="absent_text">
                     <p>
-                        In GE15, the number of absent votes have a significant impact on the <br> 
-                        election results. The red bar represents the potential number of seats a <br>
-                        party could have won if the voter's turnout has been higher. If Pakatan <br>
-                        Harapan (PH) has secured more votes, it may have reached the <span class='majority-text'>simple <br>
-                        majority of 112 seats</span> and win the election. 
+                        In <span class ='ge15-text'>GE15</span>, the number of absent votes had a significant impact on the  
+                        election results. If Pakatan Harapan (PH) had secured more votes, it 
+                        might have reach the <span class='majority-text'>simple majority of 112 seats</span> and won the  
+                        election. 
                     </p>
                     <p>
-                        This is particularly important because PH is the <b>only party</b> with a <br>
-                        realistic chance of forming the government on its own with 81 seats won <br>
-                        and 61 seats lost due to low turnout rate in certain parliamentary seats.
+                        This analysis was particularly important because PH was the <b>only 
+                        party</b> with a realistic chance of forming the government on its own 
+                        with <b>81 seats won</b> and having a potential to win <b>61 more seats</b> if 
+                        the voters' turnout rate was higher.
+                    </p>
+                    <p>
+                        The coalition government should be aware of this issues and take 
+                        necessary actions to improve the voter turnout rate in the future 
+                        elections.
                     </p>
                 </div>
 
             </div>
-            <h2 id="radar_title">Analysis of Multi-Way Fight</h2>
-            <!-- <div id="radar_chart">
-                <p id="radar_text">
-                    In GE15, we can see that the seats no longer contested by a few <br>
-                    number of parties. Due to political changes, many new parties are <br>
-                    formed and contesting in the election. This leads to a multi-way fight <br>
-                    and the votes are split among the parties but not focus on a few <br>
-                    parties like GE14. 
-                </p>
+            <h2 id="radar_title">The Multi-Way Contest of GE14 & GE15</h2>
+            <div id = "radar_chart">
                 <div id="radar"></div>
-            </div> -->
-            <div id="radar"></div>
-            <p id="radar_text">
-                In GE15, we can see that the seats no longer contested by a few <br>
-                number of parties. Due to political changes, many new parties are <br>
-                formed and contesting in the election. This leads to a multi-way fight <br>
-                and the votes are split among the parties but not focus on a few <br>
-                parties like GE14. 
-            </p>
+                <div id="radar_text">
+                    <p>
+                        In <span class="ge14-text">GE14</span>, the election landscape was dominated by three main parties: 
+                        BN, PH, and PAS. This resulted in <b>151 three-way contests</b>, 
+                        accounting for <b>68%</b> of all seats. The clear division of the vote between 
+                        these major parties led to a decisive outcome, with no hung parliament 
+                        but a direct winner.
+                    </p>
+                        
+                    <p>
+                        However, <span class="ge15-text">GE15</span> saw a significant shift. The political landscape became  
+                        more fragmented, with numerous new parties emerging and contesting 
+                        in the election. This led to a wide range of contests, from <b>2-way</b> to 
+                        as many as <b>10-way</b> battles.
+                    </p>
+                        
+                    <p>
+                        Consequently, the vote was split among several parties, unlike GE14, 
+                        where the focus remained on a few dominant contenders.
+                    </p>
+                </div>
+            </div>
                 
             <h2 id="undi18_title">Analysis on the Impact of UNDI-18</h2>
             <div id="mosaic_chart">
                 <div id="mosaic"></div>
                 <div id="mosaic_text"> 
                     <p>
-                        GE15 introduces two significant changes: UNDI-18 and Automatic <br> 
-                        Voter Registration (AVR).
+                        <span class="ge15-text">GE15</span> introduced two significant changes: <b>UNDI-18</b> and <b>Automatic  
+                        Voter Registration (AVR)</b>.
                     </p> 
                         
                     <p>
-                        UNDI-18 lowers the voting age from 21 to 18, aiming to attract <br>
-                        more young voters. This reform is highly successful, with <br> 
-                        approximately 1.4 million votes cast by voters aged 18-20, <br>
-                        representing 6.6% of the total votes. 
+                        <b>UNDI-18</b> lowered the voting age from <b>21</b> to <b>18</b>, aiming to attract 
+                        more young voters. This reform was highly successful, with 
+                        approximately <b>1.4 million votes</b> casted by voters aged 18-20, 
+                        accounting <b>6.6%</b> of the total votes. 
                     </p>
                         
                     <p>
-                        AVR, which automatically registers citizens as voters, further <br> 
-                        simplifies the voting process. As a result, the voter pool increased <br>
-                        significantly from GE14's 12.3 million to GE15's 15.81 million.
+                        <b>AVR</b> which automatically registered citizens as voters, further 
+                        simplified the voting process. As a result, the voter pool increased 
+                        significantly from GE14's <b>12.3 million</b> to GE15's <b>15.81 million</b>.
                     </p>
                         
                     <p>
-                        Despite the increase in registered voters, the turnout rate for GE15 <br>
-                        was 74.7%,a 7.6% drop from GE14's 82.3%. This decline in voter <br>
-                        participation is a critical issue and the government needs to address <br> 
+                        Despite the increase in registered voters, the turnout rate for GE15 
+                        was <b>74.7%</b>,a <b>7.6% drop</b> from GE14's <b>82.3%</b>. This decline in voter 
+                        participation is a critical issue and the government needs to address 
                         it by implementing strategies to improve future turnout rates.
                      </p>
                 </div>
@@ -119,21 +134,65 @@
                 </div>
                 <div id="two_chart_text">
                     <p id = "pop_pyramid_text"> 
-                        By closely comparing the number of votes between <span class="ge14-text">GE14</span> and <span class = "ge15-text">GE15</span>, <br> 
-                        it is observed that GE15 recorded a significantly <b>higher</b> number of <br>
-                        votes across all age groups. This increase can be attributed to the <br>
-                        introduction of <b>AVR</b> and <b>UNDI-18</b>.These reforms have made the <br>
-                        voting process easier and more accessible to the public, leading to a <br>
+                        By closely comparing the number of votes between <span class="ge14-text">GE14</span> and <span class = "ge15-text">GE15</span>,  
+                        it is observed that GE15 recorded a significantly <b>higher</b> number of 
+                        votes across all age groups. This increase can be attributed to the 
+                        introduction of <b>AVR</b> and <b>UNDI-18</b>.These reforms have made the 
+                        voting process easier and more accessible to the public, leading to a 
                         <b>substantial rise</b> in the number of eligible voters in <span class = 'ge15-text'>GE15</span>.
                     </p>
                     <p id="treemap_text">
-                        From the treemap above, it is observed that the distribution of electors <br> 
-                        across different genders within each group is approximately the same. 
+                        From the treemap above, it is observed that the distribution of electors 
+                        across different genders within each group is <b>approximately the same</b>. 
                     </p>     
                 </div>
                <div id="metadata">
-                    <div id="self_info"></div>
-                    <div id="data_info"></div>
+                    <div id="self_info">
+                        <p>
+                            <b>Author</b>: Chuah Sze Ler <br>
+                            <b>Date</b>: 13/10/2024 <br>
+                            <b>Implementation</b>: This visualisation explores the election <br>results 
+                            of GE15 and analyse on the reason for hung parliament.
+                        </p>
+                    </div>
+                    <div id="data_info">
+                        <p>
+                            <b>Data Source</b>:
+                        </p>
+                        <ul>
+                            <li>
+                                <b>Link</b>: <a href="https://github.com/TindakMalaysia/HISTORICAL-ELECTION-RESULTS/blob/main/2022-ELECTION-RESULTS/MALAYSIA_GE15_PARLIAMENT_ELECTIONS_v22112023.csv">GE15 Election Result</a> <br>
+                                <b>Author</b>: Danesh Prakash Chacko <br>
+                                <b>Date</b>: 12/2/2024 
+                            </li>
+                            <li>
+                                <b>Link</b>: <a href="https://github.com/TindakMalaysia/HISTORICAL-ELECTION-RESULTS/blob/main/2022-ELECTION-RESULTS/MALAYSIA_2022_PARLIAMENT_COMPOSITION.csv">GE15 Parliament Composition</a> <br>
+                                <b>Author</b>: Danesh Prakash Chacko <br>
+                                <b>Date</b>: 18/1/2024 
+                            </li>
+                            <li>
+                                <b>Link</b>: <a href="https://github.com/TindakMalaysia/HISTORICAL-ELECTION-RESULTS/tree/main/2018-ELECTION-RESULTS">GE14 Election Result</a> <br>
+                                <b>Author</b>: Danesh Prakash Chacko <br>
+                                <b>Date</b>: 24/9/2024 
+                            </li>
+                            <li>
+                                <b>Link</b>: <a href="https://github.com/TindakMalaysia/HISTORICAL-ELECTION-RESULTS/blob/main/2018-ELECTION-RESULTS/MALAYSIA_2018_PARLIAMENTARY_COMPOSITION.csv">GE14 Parliament Composition</a> <br>
+                                <b>Author</b>: Danesh Prakash Chacko <br>
+                                <b>Date</b>: 24/9/2024 
+                            </li>
+                            <li>
+                                <b>Link</b>: <a href="https://github.com/mptwaktusolat/jakim.geojson/blob/master/malaysia.state.geojson">Malaysia State GeoJSON</a> <br>
+                                <b>Author</b>: Nullifye<br>
+                                <b>Date</b>: 18/1/2024 
+                            </li>                            
+                            <li>
+                                <b>Link</b>: <a href="https://github.com/mptwaktusolat/jakim.geojson/blob/master/malaysia.parlimen.geojson">Malaysia Parliament GeoJSON</a> <br>
+                                <b>Author</b>: Nullifye <br>
+                                <b>Date</b>: 21/10/2022 
+                            </li>
+                        </ul>
+
+                    </div>
                </div>
             </div>
         </div>
@@ -215,7 +274,7 @@
                                         "type": "nominal",
                                         "scale": {
                                             "domain": ["Barisan Nasional (BN)", "Pakatan Harapan (PH)", "PAS", "Warisan", "Sabah Star", "Independent"],
-                                            "range": ["#0169ba", "#f6441e", "#008c51", "#e6a700", "orange", "#645665"]
+                                            "range": ["#0169ba", "#f6441e", "#9944b9", "#db7dc5", "#59b2da", "#645665"]
                                         },
                                         "legend": null
                                     },
@@ -304,7 +363,7 @@
                                         "type": "nominal",
                                         "scale": {
                                             "domain": ["Barisan Nasional (BN)", "Pakatan Harapan (PH)", "Perikatan Nasional (PN)", "Gabungan Parti Sarawak (GPS)", "Gabungan Rakyat Sabah (GRS)", "Parti Bangsa Malaysia (PBM)","Parti Kesejahteraan Demokratik Masyarakat (KDM)", "Warisan", "Muda", "Independent"],
-                                            "range": ["#0169ba", "#f6441e","#9944b9","#e6a700","#54b3e3","#008c51","#f39c60","#ea7dcd","#950300","#645665"]
+                                            "range": ["#0169ba", "#f6441e","#9944b9","#e6a700","#54b3e3","#B17457","#f39c60","#ea7dcd","#950300","#645665"]
                                         },
                                         "legend": null
                                     },
@@ -333,41 +392,41 @@
 
                 if (currentElection === 'GE15') 
                 {
-                    vegaEmbed('#vis', ge15Url).then(result => {
+                    vegaEmbed('#vis', ge15Url,{"actions":false}).then(result => {
                         handleClickGE15(result, ge15DataUrl);
                     }).catch(console.error);
                 } 
                 else 
                 {
-                    vegaEmbed('#vis', ge14Url).then(result => {
+                    vegaEmbed('#vis', ge14Url,{"actions":false}).then(result => {
                         handleClickGE14(result, ge14DataUrl);
                     }).catch(console.error);
                 }
                 const visTextLeft = document.getElementById('vis-text-left');
                 visTextLeft.innerHTML = `<p>
-                    The 14th General Election (GE14) was undoubtedly a resounding victory <br>
-                    for PH. Unlike GE15, PH secured the majority of seats in Parliament <br>
-                    with a total of 113. GE14 also highlighted key states such as Selangor, <br>
-                    Penang, Kuala Lumpur, Perak and Johor. 
+                    The <span class='ge14-text'>14th General Election (GE14)</span> was undoubtedly a resounding victory <br>
+                    for PH. Unlike GE15, <span class ='ph-text'>PH</span> secured the majority of seats in Parliament <br>
+                    with a total of <b>113</b>. GE14 also highlighted key states such as <b>Selangor, <br>
+                    Penang, Kuala Lumpur, Perak</b> and <b>Johor</b>. 
                 </p>
                 <p>
                     These states were crucial for political parties due to their significant <br>
-                    contribution to Malaysia’s economy, higher urbanization, and more <br>
-                    affluent voter base. Fortunately, PH managed to secure these states, <br>
+                    contribution to <b>Malaysia’s economy, higher urbanisation</b> and more <br>
+                    <b>affluent voter base</b>. Fortunately, <span class ='ph-text'>PH</span> managed to secure these states, <br>
                     positioning itself with the prospect of improving the country’s economy.
                 </p>`;
                 const visTextRight = document.getElementById('vis-text-right');
                 visTextRight.innerHTML =`<p>
-                    The 15th General Election (GE15) resulted in a hung parliament, with <br>
-                    no party securing the minimum majority of 112 seats. This had led to <br> 
-                    the formation of a coalition government. Unlike GE14, GE15 marked a <br>
-                    significant shift in the political landscape, with the introduction <br>
-                    of new parties and the reformation of existing ones.
+                    The <span class='ge15-text'>15th General Election (GE15)</span> resulted in a <b>hung parliament</b>. <br>
+                    This had led to  the formation of a <b>coalition government</b>. Unlike <br> 
+                    GE14, GE15 marked a significant shift in the political landscape, <br>
+                    with the introduction of new parties and the reformation of existing <br>
+                    ones.
                     </p>
 
                     <p>
-                    Fortunately, the coalition government managed to secure the key states <br>
-                    highlighted in GE14. In contrast, Perikatan Nasional (PN) only managed <br>
+                    Fortunately, the <b>coalition government</b> managed to secure the key states <br>
+                    highlighted in GE14. In contrast, <span class ='pn-text'>Perikatan Nasional (PN)</span> only managed <br>
                     to secure states that were more rural and less economically vibrant, <br>
                     despite winning the second-highest number of seats.
                     </p>`;
@@ -383,25 +442,20 @@
 
                 const visUrl = currentElection === 'GE15' ? ge15Url : ge14Url;
 
-                vegaEmbed('#vis', visUrl).then(function(result) {}).catch(console.error);
+                vegaEmbed('#vis', visUrl,{"actions":false}).then(function(result) {}).catch(console.error);
                 const visTextLeft = document.getElementById('vis-text-left');
-                visTextLeft.innerHTML = 
-                `<p>
-                    The turnout rate from GE14 to GE15 has been a decreasing trend. This is due <br>
-                    to the reason of the introduction of Automatic Voter Registration (AVR) and <br>
-                    UNDI-18. Because of that, the group of individuals who are not engaged in <br> 
-                    politics will decline their votes, resulting in a lower turnout rate. Thus, <br>
-                    many seats are won by a small margin, leading to a hung parliament.
-                </p>`;
+                visTextLeft.innerHTML = `<p>
+                    The turnout rate from GE14 to GE15 showed a <b>decreasing</b> trend, largely <br> 
+                    due to the introduction of <b>Automatic Voter Registration (AVR)</b> and <br> 
+                    <b>UNDI-18.</b>
+                    </p>`;
                 const visTextRight = document.getElementById('vis-text-right');
-                visTextRight.innerHTML = 
-                `<p>
-                    The turnout rate from GE14 to GE15 has been a decreasing trend. This is due <br>
-                    to the reason of the introduction of Automatic Voter Registration (AVR) and <br>
-                    UNDI-18. Because of that, the group of individuals who are not engaged in <br> 
-                    politics will decline their votes, resulting in a lower turnout rate. Thus, <br>
-                    many seats are won by a small margin, leading to a hung parliament.
-                </p>`;
+                visTextRight.innerHTML = `<p>
+                    As a result, a segment of individuals who were not politically engaged <br> 
+                    opted not to vote, leading to a <b>lower overall turnout</b> in GE15. This had <br>
+                    caused many constituencies in GE15 to be won by small margins, <br>
+                    contributing to the formation of a <b>hung parliament</b>.
+                    </p>`;
             }
 
             function showRace() {
@@ -531,30 +585,46 @@
 
                 if (currentElection === 'GE15') 
                 {
-                    vegaEmbed('#vis', ge15Url).then(result => {
+                    vegaEmbed('#vis', ge15Url, {"actions":false}).then(result => {
                         handleClickRaceGE15(result);
                     }).catch(console.error);
                 } 
                 else 
                 {
-                    vegaEmbed('#vis', ge14Url).then(result => {
+                    vegaEmbed('#vis', ge14Url,{"actions":false}).then(result => {
                         handleClickRaceGE14(result);
                     }).catch(console.error);
                 }
 
-                const visText = document.getElementById('vis-text');
-                visText.innerHTML = 
-                `<p>
-                    By looking at the race distribution of each seats, we can see that seats with a higher percentage of 
-                    Malay voters and more rural areas 
-                    are more <br>
-                    likely to be won by Perikatan Nasional (PN). However, seats with a higher percentage of Malay 
-                    voters and more urban areas are more <br> 
-                    likely to be won by Pakatan Harapan (PH). This reflects the political landscape of Malaysia, 
-                    where the rural areas are more conservative <br> 
-                    and the urban area are more open to changes.
-                </p>`;
-            }
+                const visTextLeft = document.getElementById('vis-text-left');
+                visTextLeft.innerHTML = `<p>
+                    By analyzing the race distribution of each seat, it became clear that <br> 
+                    constituencies with a higher percentage of <span class ='malay-text'>Malay</span> voters in <b>rural areas</b> <br> 
+                    were more likely to be won by <b>Perikatan Nasional (PN)</b> and <b>Barisan <br>
+                    Nasional (BN)</b>. In contrast, seats with a similar percentage of <span class ='malay-text'>Malay</span> <br>
+                    voters in <b>urban areas</b> were more likely to be won by <b>Pakatan Harapan <br>
+                    (PH)</b>.
+                    </p> 
+
+                    <p>
+                    This pattern reflects Malaysia’s political landscape, where rural <br>
+                    regions tend to be more conservative, while urban areas are more <br>
+                    open to change.
+                    </p> `;
+                const visTextRight = document.getElementById('vis-text-right');
+                visTextRight.innerHTML = `<p>
+                    Additionally, constituencies with a higher percentage of <span class='chinese-text'>Chinese</span> <br>
+                    voters were more likely to be won by <b>Pakatan Harapan (PH)</b>, while <br>
+                    those with a higher percentage of <span class='bumi-sarawak-text'>Bumiputera Sarawak</span> voters were <br>
+                    won by <b>Barisan Nasional (BN)</b> in <span class='ge14-text'>GE14</span> and <b>Gabungan Parti <br>
+                    Sarawak (GPS)</b> in <span class='ge15-text'>GE15</span>.
+                    </p>
+
+                    <p> 
+                    Constituencies with a higher percentage of <span class='bumi-sabah-text'>Bumiputera Sabah</span> voters <br>
+                    had consistently been won by <b>Barisan Nasional (BN)</b>.
+                    </p>`;
+                                }
             
             function toggleElection() 
             {
@@ -570,11 +640,11 @@
                     showRace();
                 }
             }
-            vegaEmbed('#radar', "json/radar_chart.json").then(function(result) {}).catch(console.error); 
-            vegaEmbed('#absent', "json/proportional.json").then(function(result) {}).catch(console.error);
-            vegaEmbed('#mosaic', "json/mosaic.json").then(function(result) {}).catch(console.error);
-            vegaEmbed('#pop_pyramid', "json/population_pyramid.json").then(function(result) {}).catch(console.error); 
-            vegaEmbed('#treemap', "json/treemap.json").then(function(result) {
+            vegaEmbed('#radar', "json/radar_chart.json",{"actions":false}).then(function(result) {}).catch(console.error); 
+            vegaEmbed('#absent', "json/proportional.json",{"actions":false}).then(function(result) {}).catch(console.error);
+            vegaEmbed('#mosaic', "json/mosaic.json",{"actions":false}).then(function(result) {}).catch(console.error);
+            vegaEmbed('#pop_pyramid', "json/population_pyramid.json",{"actions":false}).then(function(result) {}).catch(console.error); 
+            vegaEmbed('#treemap', "json/treemap.json",{"actions":false}).then(function(result) {
                 document.querySelector('select').classList.add('layout');
             }).catch(console.error);
         </script>

@@ -32,8 +32,8 @@
   "spacing": 0,
   "hconcat": [
     {
-      "height": 530,
-      "width": 250,
+      "height": 545,
+      "width": 200,
       "transform": [
         {"filter": {"field": "Election", "equal": "GE14"}},
         {"filter": "datum.people >= voterSelection.people"}
@@ -42,7 +42,7 @@
         "text": "GE14",
         "fontSize": 20,
         "anchor": "middle",
-        "color": "#7E60BF"
+        "color": "#CD5C08"
       },
       "layer": [
         {
@@ -70,7 +70,7 @@
             },
             "color": {
               "field": "Election",
-              "scale": {"range": ["#7E60BF", "#295F98"]},
+              "scale": {"range": ["#CD5C08", "#295F98"]},
               "legend": null
             },
             "opacity": {
@@ -130,14 +130,14 @@
             {
               "mark": {
                 "type": "rule",
-                "color": "black",
+                "color": "#414141",
                 "strokeWidth": 1
               },
               "encoding": {
-                "x": {"value": 190},
-                "x2": {"value": 120},
-                "y": {"value": 500},
-                "y2": {"value": 500}
+                "x": {"value": 140},
+                "x2": {"value": 90},
+                "y": {"value": 510},
+                "y2": {"value": 510}
               }
             },
             {
@@ -175,7 +175,7 @@
             {
               "mark": {
                 "type": "rule",
-                "color": "black",
+                "color": "#414141",
                 "strokeWidth": 1
               },
               "encoding": {
@@ -254,7 +254,7 @@
       ]
     },
     {
-      "height": 530,
+      "height": 545,
       "width": 50,
       "view": {"stroke": null},
       "selection": {
@@ -282,8 +282,8 @@
       }
     },
     {
-      "height": 530,
-      "width": 250,
+      "height": 545,
+      "width": 200,
       "transform": [
         {"filter": {"field": "Election", "equal": "GE15"}},
         {"filter": "datum.people >= voterSelection.people"}
@@ -338,7 +338,7 @@
             "align": "left",
             "baseline": "middle",
             "dx": 10,
-            "fontSize": 14,
+            "fontSize": 1,
             "color": "#000000"
           },
           "encoding": {
@@ -357,7 +357,7 @@
             "text": {
               "field": "percentage",
               "type": "quantitative",
-              "format": ".2%"
+              "format": ".3%"
             },
             "opacity": {
               "condition": {
@@ -380,7 +380,7 @@
             {
               "mark": {
                 "type": "rule",
-                "color": "black",
+                "color": "#414141",
                 "strokeWidth": 1
               },
               "encoding": {
