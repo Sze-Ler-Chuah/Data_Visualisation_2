@@ -109,6 +109,216 @@
           "value": "black"
         }
       }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 14,
+        "fontWeight": "normal",
+        "font": "calibri",
+        "color": "black"
+      },
+      "encoding": {
+        "x": {
+          "value": 300
+        },
+        "y": {
+          "value": 220  
+        },
+        "text": {
+          "value": "Increased in the number of voters"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 14,
+        "fontWeight": "normal",
+        "font": "calibri",
+        "color": "black"
+      },
+      "encoding": {
+        "x": {
+          "value": 300
+        },
+        "y": {
+          "value": 235  
+        },
+        "text": {
+          "value": " resulted in a decrease in the ballots"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 14,
+        "fontWeight": "normal",
+        "font": "calibri",
+        "color": "black"
+      },
+      "encoding": {
+        "x": {
+          "value": 300
+        },
+        "y": {
+          "value": 250  
+        },
+        "text": {
+          "value": "percentage in GE15."
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 14,
+        "fontWeight": "normal",
+        "font": "calibri",
+        "color": "black"
+      },
+      "encoding": {
+        "x": {
+          "value": 300
+        },
+        "y": {
+          "value": 265  
+        },
+        "text": {
+          "value": "This is one of the main reasons for"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 14,
+        "fontWeight": "normal",
+        "font": "calibri",
+        "color": "black"
+      },
+      "encoding": {
+        "x": {
+          "value": 300
+        },
+        "y": {
+          "value": 280  
+        },
+        "text": {
+          "value": "hung parliament."
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 14,
+        "fontWeight": "normal",
+        "font": "calibri",
+        "color": "black"
+      },
+      "encoding": {
+        "x": {
+          "value": 40
+        },
+        "y": {
+          "value": 180  
+        },
+        "text": {
+          "value": "With over 80% ballots"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 14,
+        "fontWeight": "normal",
+        "font": "calibri",
+        "color": "black"
+      },
+      "encoding": {
+        "x": {
+          "value": 40
+        },
+        "y": {
+          "value": 195  
+        },
+        "text": {
+          "value": "percentage, this demonstartes"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 14,
+        "fontWeight": "normal",
+        "font": "calibri",
+        "color": "black"
+      },
+      "encoding": {
+        "x": {
+          "value": 40
+        },
+        "y": {
+          "value": 210  
+        },
+        "text": {
+          "value": "a strong collective committement"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 14,
+        "fontWeight": "normal",
+        "font": "calibri",
+        "color": "black"
+      },
+      "encoding": {
+        "x": {
+          "value": 40
+        },
+        "y": {
+          "value": 225  
+        },
+        "text": {
+          "value": "to political change among"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 14,
+        "fontWeight": "normal",
+        "font": "calibri",
+        "color": "black"
+      },
+      "encoding": {
+        "x": {
+          "value": 40
+        },
+        "y": {
+          "value": 240  
+        },
+        "text": {
+          "value": "Malaysians."
+        }
+      }
     }
   ],
   "config": {

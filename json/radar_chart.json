@@ -242,8 +242,8 @@
       "from": {"data": "radial-grid"},
       "encode": {
         "enter": {
-          "x": {"signal": "radius-195"},
-          "y": {"value": 215},
+          "x": {"signal": "radius-240"},
+          "y": {"value": 260},
           "text": {"value": "150"},
           "baseline": {"value": "middle"},
           "fill": {"value": "black"},
@@ -257,8 +257,8 @@
       "from": {"data": "radial-grid"},
       "encode": {
         "enter": {
-          "x": {"signal": "(radius * 0.75)-155"},
-          "y": {"value": 160},
+          "x": {"signal": "(radius * 0.75)-185"},
+          "y": {"value": 195},
           "text": {"value": "112.5"},
           "baseline": {"value": "middle"},
           "fill": {"value": "black"},
@@ -272,8 +272,8 @@
       "from": {"data": "radial-grid"},
       "encode": {
         "enter": {
-          "x": {"signal": "(radius * 0.5)-100"},
-          "y": {"value": 110},
+          "x": {"signal": "(radius * 0.5)-120"},
+          "y": {"value": 130 },
           "text": {"value": "75"},
           "baseline": {"value": "middle"},
           "fill": {"value": "black"},
@@ -287,8 +287,8 @@
       "from": {"data": "radial-grid"},
       "encode": {
         "enter": {
-          "x": {"signal": "(radius * 0.25)-60"},
-          "y": {"value": 50},
+          "x": {"signal": "(radius * 0.25)-65"},
+          "y": {"value": 60},
           "text": {"value": "37.5"},
           "baseline": {"value": "middle"},
           "fill": {"value": "black"},
