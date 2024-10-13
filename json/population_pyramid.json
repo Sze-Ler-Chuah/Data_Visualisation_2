@@ -79,7 +79,8 @@
             },
             "tooltip": [
               {"field": "AGE_RANGE", "type": "ordinal", "title": "Age Range"},
-              {"field": "people", "type": "quantitative", "title": "Number of Electors"}
+              {"field": "people", "type": "quantitative", "title": "Number of Electors"},
+              {"field": "percentage", "type": "quantitative", "format": ".2%", "title": "Percentage of Total"}
             ]
           }
         },
@@ -328,7 +329,8 @@
             },
             "tooltip": [
               {"field": "AGE_RANGE", "type": "ordinal", "title": "Age Range"},
-              {"field": "people", "type": "quantitative", "title": "Number of Electors"}
+              {"field": "people", "type": "quantitative", "title": "Number of Electors"},
+              {"field": "percentage", "type": "quantitative", "format": ".2%", "title": "Percentage"}
             ]
           }
         },

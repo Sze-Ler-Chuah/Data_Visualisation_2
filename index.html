@@ -494,6 +494,12 @@
                                 "width": 200,
                                 "height": 200,
                                 "data": { "values": raceData },
+                                "transform": [
+                                    {
+                                        "calculate": "datum.percentage / 100",
+                                        "as": "percentageDivided"
+                                    }
+                                ],
                                 "mark": "arc",
                                 "encoding": {
                                 "theta": { "field": "percentage", "type": "quantitative" },
@@ -503,11 +509,15 @@
                                     "scale": {
                                     "domain": ["Malay", "Chinese", "Indian", "Orang Asli", "Bumiputera Sabah", "Bumiputera Sarawak", "Others"],
                                     "range": ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2"]
+                                    },
+                                    "legend": 
+                                    {
+                                        "title":"Race"
                                     }
                                 },
                                 "tooltip": [
                                     { "field": "race", "type": "nominal", "title": "Race" },
-                                    { "field": "percentage", "type": "quantitative", "title": "Percentage" }
+                                    { "field": "percentageDivided", "type": "quantitative", "format" : ".2%", "title": "Percentage" }
                                 ]
                                 },
                                 "config": {}
@@ -552,6 +562,12 @@
                                 "width": 200,
                                 "height": 200,
                                 "data": { "values": raceData },
+                                "transform": [
+                                    {
+                                        "calculate": "datum.percentage / 100",
+                                        "as": "percentageDivided"
+                                    }
+                                ],
                                 "mark": "arc",
                                 "encoding": {
                                 "theta": { "field": "percentage", "type": "quantitative" },
@@ -561,11 +577,15 @@
                                     "scale": {
                                     "domain": ["Malay", "Chinese", "Indian", "Orang Asli", "Bumiputera Sabah", "Bumiputera Sarawak", "Others"],
                                     "range": ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2"]
+                                    },
+                                    "legend": 
+                                    {
+                                        "title":"Race"
                                     }
                                 },
                                 "tooltip": [
                                     { "field": "race", "type": "nominal", "title": "Race" },
-                                    { "field": "percentage", "type": "quantitative", "title": "Percentage" }
+                                    { "field": "percentageDivided", "type": "quantitative", "format": ".2%", "title": "Percentage" }
                                 ]
                                 }, "config": {}
                             };
